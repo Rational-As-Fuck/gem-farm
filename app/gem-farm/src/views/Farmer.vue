@@ -284,6 +284,7 @@ export default defineComponent({
     return {
       options: [
         {text: 'Overlord Clone', value: '9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4'},
+        {text: 'Overlord Uniques', value: 'GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs'}
       ],
       wallet,
       farm,
