@@ -78,6 +78,12 @@
         >
           Refresh Metadata
         </button>
+        <button
+          class="nes-btn mr-5"
+          @click="getAirdropList"
+        >
+          Get Airdrop List
+        </button>
       </Vault>
     </div>
     <div v-else>
@@ -100,6 +106,7 @@ import { WalletName } from '@solana/wallet-adapter-wallets';
 import useWallet from '@/composables/wallet';
 import useCluster, { Cluster }  from '@/composables/cluster';
 import { initGemFarm } from '@/common/gem-farm';
+import { initGemBank } from '@/common/gem-bank';
 import { PublicKey } from '@solana/web3.js';
 import ConfigPane from '@/components/ConfigPane.vue';
 import FarmerDisplay from '@/components/gem-farm/FarmerDisplay.vue';
@@ -126,6 +133,7 @@ export default defineComponent({
 
 
     let gf: any;
+    let gb: any;
     watch([wallet, cluster], async () => {
       await freshStart();
     });
@@ -204,6 +212,80 @@ export default defineComponent({
       }
     };
 
+    const getAirdropList = async () => {
+/* Data Setup */
+      gb = await initGemBank(getConnection(), getWallet()!);
+      /*
+      gf = await initGemFarm(getConnection(), getWallet()!);
+
+      const farmDef = await gf.fetchFarmAcc(new PublicKey('GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs'));
+      debugger;
+      */
+      const airdropList = [];
+      const thisData = [];
+      const farmConfig = [
+        {
+          "Name": "Overlord Clone Farm",
+          "Farm": "9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4",
+          "Bank": "8KoGb62ebQggZAhr684WgkLwahJS2XzStRraBFdLmYh1",
+          "Data": [],
+        },
+        {
+          "Name": "Overlord Uniques Farm",
+          "Farm": "GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs",
+          "Bank": "4X4kGBRDMAkzRgmkf8KoV7mUTsxS2LqviZg5nFKVrMjZ",
+          "Data": [],
+        },
+      ];
+
+/* End Data Setup */
+/* Setting up the airdrop object.  Get the farm configuration from farmConfig
+   and loop over it.
+*/
+      for (let fc = 0; fc < farmConfig.length; fc++) {
+        const mintOwnership = [];
+        let farmName = farmConfig[fc].Name;
+        let farmId = farmConfig[fc].Farm;
+        let bankId = farmConfig[fc].Bank;
+        console.log(`Getting airdrop list for ${farmName}`);
+        const vaultPDAs = await gb.fetchAllVaultPDAs(new PublicKey(bankId));
+        
+/* Now, loop over the vaults to get the owner and the NFTs stored in
+   each vault's gem box.
+*/
+        for (let v = 0; v < vaultPDAs.length; v++) {
+          let thisOwner = vaultPDAs[v].account.owner.toString();
+          let vaultPK = vaultPDAs[v].publicKey;
+          let thisGdrPDAs = await gb.fetchAllGdrPDAs(vaultPK);
+          let theseMints : object[] = [];
+/* Now loop through each of the Gem Deposit Receipts and get the NFT ids.
+   Count them up and store the value.
+*/
+          for (let m = 0; m < thisGdrPDAs.length; m++) {
+            theseMints.push(thisGdrPDAs[m].account.gemMint.toString());
+          }
+          let theseMintsObject: any = {};
+          theseMintsObject.owner = thisOwner;
+          theseMintsObject.nftSize = theseMints.length;
+          theseMintsObject.nftList = theseMints;
+/* Build JSON object and insert into the airdropList array
+*/
+          mintOwnership.push(theseMintsObject);
+        }
+        let thisFarmAirdrops = {
+          "Name": farmName,
+          "Bank": bankId,
+          "Farm": farmId,
+          "Data": mintOwnership
+        };
+
+        airdropList.push(thisFarmAirdrops);
+      }
+      
+      console.log(airdropList);
+      
+    };
+/* Airdrops completed */
     const initFarmer = async () => {
       await gf.initFarmerWallet(new PublicKey(farm.value!));
       await fetchFarmer();
@@ -286,6 +368,7 @@ export default defineComponent({
         {text: 'Overlord Clone', value: '9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4'},
         {text: 'Overlord Uniques', value: 'GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs'}
       ],
+      getAirdropList,
       wallet,
       farm,
       farmAcc,
