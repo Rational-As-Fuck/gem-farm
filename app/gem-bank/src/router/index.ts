@@ -19,6 +19,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Vault Owner',
     component: VaultOwner,
   },
+  {
+    path: '/vault/:col',
+    name: 'collection',
+    component: VaultOwner,
+  },
 ];
 
 const router = createRouter({

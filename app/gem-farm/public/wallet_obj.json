@@ -1,0 +1,166 @@
+[
+    {
+        "pubkey": {
+            "_bn": "bc3c14acfd0e40ce12624643ec66d2a2ab5f1d1880fe6789ee6baf661394daf5"
+        },
+        "mint": {
+            "_bn": "de0f86ebedd5ef08acacefa433ea35194a7b3f3cd79ae8abdb9f7b7071c8238e"
+        },
+        "onchainMetadata": {
+            "key": 4,
+            "updateAuthority": "5RR7m7f57HnNm8xANZztkF2eZxiPw5b86AivEQTg7rvP",
+            "mint": "FwqEz3GX7JBAwUKYSiuxvsj4ZiDLv7r5Rn2cPQJGwYww",
+            "data": {
+                "name": "Abaddon Clone #:359",
+                "symbol": "Overlords",
+                "uri": "https://blockx-api-storage.s3.amazonaws.com/63342389610/data",
+                "sellerFeeBasisPoints": 0,
+                "creators": [
+                    {
+                        "address": "5RR7m7f57HnNm8xANZztkF2eZxiPw5b86AivEQTg7rvP",
+                        "verified": 1,
+                        "share": 100
+                    }
+                ]
+            },
+            "primarySaleHappened": 0,
+            "isMutable": 0
+        },
+        "externalMetadata": {
+            "name": "Abaddon Clone #:359",
+            "symbol": "Overlords",
+            "description": "This NFTs grants you entry into the history of mankind. This Clone was created as an equal of the strongest Commander in all the Galaxies!",
+            "seller_fee_basis_points": 0,
+            "properties": {
+                "creators": [
+                    "5RR7m7f57HnNm8xANZztkF2eZxiPw5b86AivEQTg7rvP"
+                ]
+            },
+            "image": "https://www.arweave.net/_lEGcmcgzUg5jFkBk32p0kAzUGuMct3ebgKb68jadNI?ext=jpg",
+            "url": "https://www.arweave.net/_lEGcmcgzUg5jFkBk32p0kAzUGuMct3ebgKb68jadNI?ext=jpg"
+        }
+    },
+    {
+        "pubkey": {
+            "_bn": "e1b483e84510f18faa924d4a7a381b4a296607275b09b49f3ecd27cadac6dc47"
+        },
+        "mint": {
+            "_bn": "4ef380ea9e7cc3f6137e771cda428034681088bca24d832ad7319c630d268053"
+        },
+        "onchainMetadata": {
+            "key": 4,
+            "updateAuthority": "5RR7m7f57HnNm8xANZztkF2eZxiPw5b86AivEQTg7rvP",
+            "mint": "6KCA4YZGvHyDnNMd2VcbWLhwiXAUjTWN6t3CD5xUAN4z",
+            "data": {
+                "name": "MetaChimp: #593",
+                "symbol": "MetaChimp",
+                "uri": "https://blockx-api-storage.s3.amazonaws.com/60207327640/data",
+                "sellerFeeBasisPoints": 0,
+                "creators": [
+                    {
+                        "address": "5RR7m7f57HnNm8xANZztkF2eZxiPw5b86AivEQTg7rvP",
+                        "verified": 1,
+                        "share": 100
+                    }
+                ]
+            },
+            "primarySaleHappened": 0,
+            "isMutable": 0
+        },
+        "externalMetadata": {
+            "name": "MetaChimp: #593",
+            "symbol": "MetaChimp",
+            "description": "These Meta Chimps begin the origin story of human evolution",
+            "seller_fee_basis_points": 0,
+            "properties": {
+                "creators": [
+                    "5RR7m7f57HnNm8xANZztkF2eZxiPw5b86AivEQTg7rvP"
+                ]
+            },
+            "image": "https://arweave.net/FXBw-lHOSrk8YzgOX9DKeGOlGQlGjzZ_mpmmJcN9Mlk?ext=png",
+            "url": "https://arweave.net/FXBw-lHOSrk8YzgOX9DKeGOlGQlGjzZ_mpmmJcN9Mlk?ext=png"
+        }
+    },
+    {
+        "pubkey": {
+            "_bn": "3923524d7089c4199f557c345591341f6956d8ce46ec98b27fe8afdd65528663"
+        },
+        "mint": {
+            "_bn": "2b184300386cb8c7b1e4ad5e5d56c52e14b7c5bea2357a70bcc383f222728d48"
+        },
+        "onchainMetadata": {
+            "key": 4,
+            "updateAuthority": "5RR7m7f57HnNm8xANZztkF2eZxiPw5b86AivEQTg7rvP",
+            "mint": "3uDzKHTm5e8JE2Uze8U26CcgkDtDP9hk7tAmie37hdxb",
+            "data": {
+                "name": "Khafra Clone #:328",
+                "symbol": "Overlords",
+                "uri": "https://blockx-api-storage.s3.amazonaws.com/53561817259/data",
+                "sellerFeeBasisPoints": 0,
+                "creators": [
+                    {
+                        "address": "5RR7m7f57HnNm8xANZztkF2eZxiPw5b86AivEQTg7rvP",
+                        "verified": 1,
+                        "share": 100
+                    }
+                ]
+            },
+            "primarySaleHappened": 0,
+            "isMutable": 0
+        },
+        "externalMetadata": {
+            "name": "Khafra Clone #:328",
+            "symbol": "Overlords",
+            "description": "This NFTs grants you entry into the history of mankind. This Clone was created as an equal of the strongest Commander in all the Galaxies!",
+            "seller_fee_basis_points": 0,
+            "properties": {
+                "creators": [
+                    "5RR7m7f57HnNm8xANZztkF2eZxiPw5b86AivEQTg7rvP"
+                ]
+            },
+            "image": "https://www.arweave.net/QypdUGEqQtDsk06mdU9X2k6NYklAcoAqqtD_uDZGsiA?ext=jpg",
+            "url": "https://www.arweave.net/QypdUGEqQtDsk06mdU9X2k6NYklAcoAqqtD_uDZGsiA?ext=jpg"
+        }
+    },
+    {
+        "pubkey": {
+            "_bn": "82b9f4afee76887b9332eb0b766f034597c8ed707576a3d308ad56a46391fb56"
+        },
+        "mint": {
+            "_bn": "279275d3ef86be7cebdeac1858bcd37b1d0b021a7ad2bb7eca9ebb3d92123286"
+        },
+        "onchainMetadata": {
+            "key": 4,
+            "updateAuthority": "5RR7m7f57HnNm8xANZztkF2eZxiPw5b86AivEQTg7rvP",
+            "mint": "3fURxusASsakiAwLauPmqeq9Do3yb7RqQWcv2ZBRpcTX",
+            "data": {
+                "name": "Abaddon Clone #:370",
+                "symbol": "Overlords",
+                "uri": "https://blockx-api-storage.s3.amazonaws.com/67154353305/data",
+                "sellerFeeBasisPoints": 0,
+                "creators": [
+                    {
+                        "address": "5RR7m7f57HnNm8xANZztkF2eZxiPw5b86AivEQTg7rvP",
+                        "verified": 1,
+                        "share": 100
+                    }
+                ]
+            },
+            "primarySaleHappened": 0,
+            "isMutable": 0
+        },
+        "externalMetadata": {
+            "name": "Abaddon Clone #:370",
+            "symbol": "Overlords",
+            "description": "These Meta Chimps begin the origin story of human evolution",
+            "seller_fee_basis_points": 0,
+            "properties": {
+                "creators": [
+                    "5RR7m7f57HnNm8xANZztkF2eZxiPw5b86AivEQTg7rvP"
+                ]
+            },
+            "image": "https://www.arweave.net/vUqrrOkxmPgxb2u_Mtx0AmgDhMO1pPu0ZVRmCJiYlYo?ext=jpg",
+            "url": "https://www.arweave.net/vUqrrOkxmPgxb2u_Mtx0AmgDhMO1pPu0ZVRmCJiYlYo?ext=jpg"
+        }
+    }
+]

@@ -28,7 +28,6 @@
       </div>
 
       <!--wallet + vault view-->
-
       <div class="flex items-stretch john2">
         <!--leftjohn-->
         <NFTGrid

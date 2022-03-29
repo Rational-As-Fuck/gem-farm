@@ -28,8 +28,21 @@ export default {
 </script>
 
 <style>
+#app {
+  background-image: url("/images/bg.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  font-family: "Exo 2", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: white;
+  padding-bottom: 80px;
+}
+
+
 * {
-  font-family: 'Press Start 2P', monospace;
+  font-family: 'Exo 2', sans-serif;
 }
 input[type='radio']:checked + span {
   @apply text-black;
