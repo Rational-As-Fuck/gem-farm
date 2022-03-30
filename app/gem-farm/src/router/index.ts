@@ -19,6 +19,30 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Farmer',
     component: Farmer,
   },
+  {
+    path: '/clones',
+    component: Farmer,
+    props: {
+      collectionName: 'Overlord Clones',
+      farmAddress: '9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4"',
+    },
+  },
+  {
+    path: '/overlords',
+    component: Farmer,
+    props: {
+      collectionName: 'Unique Overlords',
+      farmAddress: 'GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs',
+    },
+  },
+  {
+    path: '/chimps',
+    component: Farmer,
+    props: {
+      collectionName: 'Meta Chimps',
+      farmAddress: '3owWkikZXpWGdmhQf3xhaYf8GMPRr2b9EjSmXQFZ2Vp4',
+    },
+  },
 ];
 
 const router = createRouter({

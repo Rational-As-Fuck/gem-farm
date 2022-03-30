@@ -1,6 +1,132 @@
-/* ./src/index.css */
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+div.plain-card {
+    background-image: linear-gradient(
+      184deg,
+      rgba(255, 2455, 255, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: -2px 0px 20px 0px rgba(0, 0, 0, 0.26);
+  }
+  
+  nav.nested-routes {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  nav.main-routes {
+    width: 100%;
+    text-align: center;
+  }
+  
+  nav a {
+    font-size: medium;
+    font-weight: bold;
+    color: white;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+    color: rgb(234, 232, 74);
+  }
+  
+  nav a.router-link-active {
+    font-size: mediaum;
+    font-weight: bold;
+    color: rgb(234, 232, 74);
+  }
+  
+  nav a.router-link-active:hover {
+    text-decoration: underline;
+  }
+  
+  nav a {
+    display: inline-block;
+    padding: 0 1rem;
+    border-left: 1px solid var(--color-border);
+  }
+  
+  nav a:first-of-type {
+    border: 0;
+  }
+  
+  .swv-dropdown {
+      @apply w-full;
+  }
+  
+  .swv-button-trigger {
+      @apply bg-imso-violet justify-center !important;
+  }
+  
+  .swv-button-trigger:hover {
+      @apply bg-imso-violet-hover justify-center !important;
+  }
+  
+  .swv-dropdown-list {
+      @apply top-auto bottom-full md:top-full md:bottom-auto md:left-0 md:right-auto;
+  }
+  
+  .swv-dropdown-list-active {
+      @apply transform -translate-y-3 md:translate-y-3;
+  }
+  
+  .claim-button-trigger {
+      @apply bg-imso-greena justify-center !important;
+  }
+  
+  .claim-button-trigger:hover {
+      @apply bg-imso-greenb justify-center !important;
+  }
+  
+  .farm-button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      align-items: center;
+      font-family: 'Goldman', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      height: 38px;
+      margin-top: 10px;
+      padding: 0 24px;
+      border-radius: 5px;
+  }
+  
+  .farm-button-trigger {
+      @apply bg-imso-violet justify-center !important;
+  }
+  
+  .farm-button-trigger:hover {
+      @apply bg-imso-violet-hover justify-center !important;
+  }
+  
+  .swv-button {
+      background-color: transparent;
+      border: none;
+      color: var(--swv-button-text-color);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-family: 'Goldman', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      height: 38px;
+      line-height: 48px;
+      padding: 0 24px;
+      border-radius: 5px;
+  }
+  
+  @media screen and (min-width: 1024px) {
+      .swv-button, .farm-button {
+          font-size: 16px;
+          height: 38px;
+      }
+  }
