@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from "vue-router";
 import TheAppHeader from "@/components/gem-farm/TheAppHeader.vue";
 import TheTitle from "@/components/gem-farm/TheTitle.vue";
+import TheStakeMeter from "@/components/gem-farm/TheStakeMeter.vue";
 </script>
 
 <template>
@@ -9,7 +10,10 @@ import TheTitle from "@/components/gem-farm/TheTitle.vue";
     <div class="relative h-full min-h-screen">
       <TheAppHeader />
       <TheTitle />
-      
+      <div>
+        <p class="colheading capitalize">{{ $route.params.col }}</p>
+      </div>
+      <TheStakeMeter />
       <div class="p-10">
         <router-view />
       </div>
@@ -37,7 +41,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: white;
-  padding-bottom: 80px;
 }
 
 #background {
@@ -64,4 +67,10 @@ div.uniques {
 input[type='radio']:checked + span {
   @apply text-black;
 }
+
+.colheading {
+  font-family: "Goldman", sans-serif;
+  @apply text-4xl;
+}
+
 </style>

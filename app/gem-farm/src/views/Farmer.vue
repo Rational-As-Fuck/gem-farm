@@ -10,7 +10,6 @@
         <input id="farm" class="nes-input" v-model="farm" />
       </div>
     </div>
-
     <div v-if="farmerAcc">
       <FarmerDisplay
         :key="farmerAcc"
