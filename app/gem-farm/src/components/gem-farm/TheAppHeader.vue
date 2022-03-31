@@ -14,13 +14,13 @@
       </div>
       <div class="ml-auto flex items-center h-full">
         <nav class="main-routes">
-          <router-link class="text-sm md:text-base" to="/farmer/clones"
+          <router-link class="text-sm md:text-base" to="/clones"
             >Overlord Clones</router-link
           >
-          <router-link class="text-sm md:text-base" to="/farmer/uniques"
+          <router-link class="text-sm md:text-base" to="/uniques"
             >Unique Overlords</router-link
           >
-          <router-link class="text-sm md:text-base" to="/farmer/chimps"
+          <router-link class="text-sm md:text-base" to="/chimps"
             >Chimps</router-link
           >
         </nav>

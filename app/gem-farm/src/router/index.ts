@@ -20,7 +20,7 @@ const routes: Array<RouteRecordRaw> = [
     component: Farmer,
   },
   {
-    path: '/farmer/:col',
+    path: '/:col',
     name: 'collection',
     component: Farmer,
   },

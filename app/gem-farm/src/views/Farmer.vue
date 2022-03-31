@@ -1,7 +1,4 @@
 <template>
-  <!-- <div class="py-10 px-10 flex justify-center align-middle">
-    <p class="text-4xl pt-3 px-1 mt-1 text-black underline">{{ collectionName }}</p>
-  </div> -->
   <ConfigPane />
   <div v-if="!wallet" class="text-center">Pls connect (burner) wallet</div>
   <div v-else>
@@ -29,37 +26,36 @@
         class="mb-10"
         :vault="farmerAcc.vault.toBase58()"
         @selected-wallet-nft="handleNewSelectedNFT"
-        :collectionName="collectionName"
       >
         <button
           v-if="farmerState === 'staked' && selectedNFTs.length > 0"
-          class="inline-flex justify-center rounded-md border px-4 py-2 text-base font-medium sm:text-sm border-transparent text-white hover:bg-blue-600 bg-blue-500 focus:outline-none mr-5"
+          class="nes-btn is-primary mr-5"
           @click="addGems"
         >
-          Add NFTs (resets staking)
+          Add Gems (resets staking)
         </button>
         <button
           v-if="farmerState === 'unstaked'"
-          class="inline-flex justify-center items-center rounded-md border px-4 py-2 text-base font-medium sm:text-sm border-transparent text-white hover:bg-green-600 bg-green-500 focus:outline-none mr-5"
+          class="nes-btn is-success mr-5"
           @click="beginStaking"
         >
           Begin staking
         </button>
         <button
           v-if="farmerState === 'staked'"
-          class="inline-flex justify-center items-center rounded-md border px-4 py-2 text-base font-medium sm:text-sm border-transparent text-white hover:bg-red-600 bg-red-500 focus:outline-none  mr-5"
+          class="nes-btn is-error mr-5"
           @click="endStaking"
         >
           End staking
         </button>
         <button
           v-if="farmerState === 'pendingCooldown'"
-          class="inline-flex justify-center items-center rounded-md border px-4 py-2 text-base font-medium sm:text-sm border-transparent text-white hover:bg-red-600 bg-red-500 focus:outline-none  is-error mr-5"
+          class="nes-btn is-error mr-5"
           @click="endStaking"
         >
           End cooldown
         </button>
-        <button class="inline-flex justify-center items-center rounded-md border px-4 py-2 text-base font-medium sm:text-sm border-transparent text-white hover:bg-yellow-600 bg-yellow-500 focus:outline-none  is-warning" @click="claim">
+        <button class="nes-btn is-warning" @click="claim">
           Claim {{ availableA }} A / {{ availableB }} B
         </button>
       </Vault>
@@ -69,7 +65,7 @@
         Farmer account not found :( Create a new one?
       </div>
       <div class="w-full text-center">
-        <button class="inline-flex justify-center rounded-md border px-4 py-2 text-base font-medium sm:text-sm border-transparent text-white hover:bg-blue-600 bg-blue-500 focus:outline-none" @click="initFarmer">
+        <button class="nes-btn is-primary" @click="initFarmer">
           New Farmer
         </button>
       </div>
@@ -90,8 +86,7 @@ import { INFT } from '@/common/web3/NFTget';
 import { findFarmerPDA, stringifyPKsAndBNs } from '@gemworks/gem-farm-ts';
 export default defineComponent({
   components: { Vault, FarmerDisplay, ConfigPane },
-  props: {collectionName: String, farmAddress: String},
-  setup(props) {
+  setup() {
     const { wallet, getWallet } = useWallet();
     const { cluster, getConnection } = useCluster();
     let gf: any;
@@ -103,9 +98,7 @@ export default defineComponent({
       await freshStart();
     });
     // --------------------------------------- farmer details
-    console.log("props", props)
-    const collectionName = ref<string>(props.collectionName!);
-    const farm = ref<string>(props.farmAddress!);
+    const farm = ref<string>();
     const farmAcc = ref<any>();
     const farmerIdentity = ref<string>();
     const farmerAcc = ref<any>();
@@ -227,7 +220,6 @@ export default defineComponent({
     return {
       wallet,
       farm,
-      collectionName,
       farmAcc,
       farmer: farmerIdentity,
       farmerAcc,
