@@ -1,5 +1,5 @@
 <template>
-  <div class="nes-container with-title">
+  <div class="nes-container">
     <p class="title">Fund / Cancel / Lock Funding</p>
     <!--switch between A and B rewards-->
     <p class="mb-2">Choose reward:</p>

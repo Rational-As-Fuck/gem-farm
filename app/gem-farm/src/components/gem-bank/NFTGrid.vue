@@ -1,5 +1,5 @@
 <template>
-  <div class="nes-container with-title">
+  <div class="nes-container">
     <p class="title">{{ title }}</p>
     <slot />
     <div class="flex flex-wrap">

@@ -21,7 +21,7 @@
     <!--existing farms-->
     <div v-if="foundFarms && foundFarms.length">
       <!--farm selector-->
-      <div class="nes-container with-title mb-10">
+      <div class="nes-container mb-10">
         <p class="title">Farm Details</p>
         <p class="mb-2">Choose farm:</p>
         <div class="nes-select mb-5">

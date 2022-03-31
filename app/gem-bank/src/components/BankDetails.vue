@@ -1,5 +1,5 @@
 <template>
-  <div class="nes-container with-title">
+  <div class="nes-container">
     <p class="title">Bank Details</p>
     <div class="mb-2">Bank address: {{ bank.toBase58() }}</div>
     <div class="mb-2">Bank manager: {{ bankAcc.bankManager.toBase58() }}</div>

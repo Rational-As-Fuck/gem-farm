@@ -3,7 +3,7 @@
   <div v-if="!wallet" class="text-center">Pls connect (burner) wallet</div>
   <div v-else>
     <!--bank address-->
-    <div class="nes-container with-title mb-10">
+    <div class="nes-container mb-10">
       <p class="title">Connect to a Bank</p>
       <div class="nes-field mb-5">
         <label for="farm">Bank address:</label>

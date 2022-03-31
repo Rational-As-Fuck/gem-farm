@@ -1,5 +1,5 @@
 <template>
-  <div class="nes-container with-title">
+  <div class="nes-container">
     <p class="title">Manage Vaults</p>
     <div v-if="fetchedVaultList && fetchedVaultList.length">
       <!--selector-->
@@ -25,7 +25,7 @@
       <!--vault contents-->
       <div>
         <NFTGrid
-          class="nes-container with-title"
+          class="nes-container"
           title="Vault contents"
           :nfts="fetchedVaultNFTs"
         >

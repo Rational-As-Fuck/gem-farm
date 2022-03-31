@@ -21,26 +21,29 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/clones',
+    name: 'clones',
     component: Farmer,
     props: {
       collectionName: 'Overlord Clones',
-      farmAddress: '9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4"',
+      farmAddress: 'HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9"',
     },
   },
   {
-    path: '/overlords',
+    path: '/uniques',
+    name: 'uniques',
     component: Farmer,
     props: {
       collectionName: 'Unique Overlords',
-      farmAddress: 'GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs',
+      farmAddress: 'FhmRrvxm1aiWRwgALMXJnPKBAzBjVox4Gkxi2RawbFYU',
     },
   },
   {
     path: '/chimps',
+    name: 'chimps',
     component: Farmer,
     props: {
       collectionName: 'Meta Chimps',
-      farmAddress: '3owWkikZXpWGdmhQf3xhaYf8GMPRr2b9EjSmXQFZ2Vp4',
+      farmAddress: '5JNBJBUYFzCmF9vJVea6cwXabp1dCQ8PRtsMRARMfPdv',
     },
   },
 ];

@@ -1,5 +1,5 @@
 <template>
-  <div class="nes-container with-title">
+  <div class="nes-container">
     <p class="title">Refresh Farmer</p>
     <form @submit.prevent="refreshFarmer">
       <div class="nes-field mb-5">

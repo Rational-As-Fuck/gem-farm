@@ -1,5 +1,5 @@
 <template>
-  <div class="nes-container with-title mb-10">
+  <div class="nes-container mb-10">
     <p class="title">Welcome</p>
     <p>Welcome to Gem Farm 💎 - the #1 NFT Staking solution on Solana!</p>
     <p class="mt-5">
@@ -26,7 +26,7 @@
     </p>
   </div>
   <div class="flex flex-row">
-    <div class="nes-container with-title flex-1 mr-5">
+    <div class="nes-container flex-1 mr-5">
       <p class="title">Start/manage a farm</p>
       <p class="mb-5">
         Choose this if you have your own NFT collection you'd like to offer
@@ -36,7 +36,7 @@
         <button class="nes-btn is-primary">Start a farm</button>
       </router-link>
     </div>
-    <div class="nes-container with-title flex-1 ml-5">
+    <div class="nes-container flex-1 ml-5">
       <p class="title">Stake your NFTs</p>
       <p class="mb-5">
         Choose this if you'd like to stake your NFTs at one of the existing

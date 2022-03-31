@@ -1,5 +1,5 @@
 <template>
-  <div class="nes-container with-title">
+  <div class="nes-container">
     <p class="title">New Farm Config</p>
     <form @submit.prevent="initFarm">
       <!--reward A-->

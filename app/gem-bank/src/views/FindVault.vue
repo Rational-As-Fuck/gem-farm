@@ -5,7 +5,7 @@
     search by vault/vault creator you'll be presented with actual contents.
   </p>
 
-  <div class="nes-container with-title mt-10">
+  <div class="nes-container mt-10">
     <p class="title">Find vault(s)</p>
 
     <form @submit.prevent="loadVaults">
@@ -43,12 +43,12 @@
 
   <NFTGrid
     v-if="vault || vaultCreator"
-    class="nes-container with-title mt-10"
+    class="nes-container mt-10"
     :title="`${vaultCreator || vault} contents`"
     :nfts="fetchedVaultNFTs"
   />
 
-  <div v-else-if="bank || bankManager" class="nes-container with-title mt-10">
+  <div v-else-if="bank || bankManager" class="nes-container mt-10">
     <p class="title">{{ bankManager || bank }} vaults</p>
     {{ fetchedVaultList }}
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="nes-container with-title">
+  <div class="nes-container">
     <p class="title">Whitelist settings</p>
     <form @submit.prevent="updateWhitelist">
       <label>

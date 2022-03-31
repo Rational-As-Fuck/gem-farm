@@ -1,5 +1,5 @@
 <template>
-  <div class="nes-container with-title">
+  <div class="nes-container">
     <p class="title">Create Test Reward Mint</p>
     <button class="nes-btn is-primary" @click="createTestReward">
       Create Test Mint

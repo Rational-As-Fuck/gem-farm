@@ -5,7 +5,15 @@
 @tailwind components;
 @tailwind utilities;
 
-div.plain-card {
+  .nes-input {
+    color: black;
+  }
+
+  select {
+    color: black;
+  }
+
+  div.plain-card {
     background-image: linear-gradient(
       184deg,
       rgba(255, 2455, 255, 0.2) 0%,

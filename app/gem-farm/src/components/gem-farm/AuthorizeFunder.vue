@@ -1,5 +1,5 @@
 <template>
-  <div class="nes-container with-title">
+  <div class="nes-container">
     <p class="title">Authorize / Deauthorize Funders</p>
     <div class="flex">
       <!--authorize-->

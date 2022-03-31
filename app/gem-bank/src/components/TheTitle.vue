@@ -23,7 +23,7 @@
         </p>
       </div>
       <div
-        class="sm:absolute sm:bottom-0 md:absolute md:bottom-1.5 flex flex-row whitespace-nowrap"
+        class="flex flex-row whitespace-nowrap"
       >
         <div class="basis-1/2 flex-initial pr-2.5">
           <wallet-multi-button></wallet-multi-button>

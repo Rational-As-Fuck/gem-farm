@@ -2,28 +2,21 @@
   <div id="background" :class="$route.params.col">
     <div class="relative h-full min-h-screen">
       <TheAppHeader />
-      <TheNavBar />
       <TheTitle />
       
       <div class="p-10">
         <router-view />
       </div>
 
-      <div class="pt-10"></div>
-      <TheCat />
-      <TheFooter />
     </div>
 </div>
 </template>
 
 <script lang="ts">
-import TheNavBar from '@/components/TheNavBar';
-import TheFooter from '@/components/gem-farm/TheFooter';
-import TheCat from '@/components/gem-farm/TheCat';
-import TheAppHeader from '@/components/gem-farm/TheAppHeader';
-import TheTitle from '@/components/gem-farm/TheTitle';
+import TheTitle from '@/components/gem-farm/TheTitle.vue';
+import TheAppHeader from "@/components/gem-farm/TheAppHeader.vue";
 export default {
-  components: { TheCat, TheFooter, TheNavBar, TheAppHeader, TheTitle },
+  components: { TheAppHeader, TheTitle },
 };
 </script>
 

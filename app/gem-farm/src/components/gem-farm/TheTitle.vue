@@ -6,7 +6,7 @@
       </a>
     </div>
     <div
-      class="invisible md:visible flex-none vl mt-12 md:mt-20 lg:mt-28"
+      class="invisible md:visible flex-none border-l border-l-white/50 mt-12 md:mt-20 lg:mt-28"
     ></div>
     <div class="flex-initial mt-12 md:mt-20 lg:mt-28 pl-7">
       <div
@@ -23,7 +23,7 @@
         </p>
       </div>
       <div
-        class="sm:absolute sm:bottom-0 md:absolute md:bottom-1.5 flex flex-row whitespace-nowrap"
+        class="flex flex-row whitespace-nowrap"
       >
         <div class="basis-1/2 flex-initial pr-2.5">
           <wallet-multi-button></wallet-multi-button>
@@ -36,9 +36,3 @@
   </div>
 </template>
 
-<style scoped>
-.vl {
-  @apply border-l;
-  @apply border-l-white/50;
-}
-</style>

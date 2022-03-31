@@ -7,7 +7,7 @@ pub mod instructions;
 pub mod number128;
 pub mod state;
 
-declare_id!("8q6iXyzUS4kWdbQsZs9rU4WNSw6wieW4GdE6dDZsrDka");
+declare_id!("A8cLyDaAMz11ZNFE3HaLV7LmCLzwcvDocAXoGwMR3RXY");
 
 #[program]
 pub mod gem_farm {

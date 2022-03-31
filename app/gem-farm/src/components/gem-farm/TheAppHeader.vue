@@ -14,13 +14,14 @@
       </div>
       <div class="ml-auto flex items-center h-full">
         <nav class="main-routes">
-          <router-link class="text-sm md:text-base" to="/vault/clones"
+          <router-link :to="{ name: 'chimps', params: { collectionName: 123 }}">User</router-link>
+          <router-link class="text-sm md:text-base" to="/clones"
             >Overlord Clones</router-link
           >
-          <router-link class="text-sm md:text-base" to="/vault/uniques"
+          <router-link class="text-sm md:text-base" to="/uniques"
             >Unique Overlords</router-link
           >
-          <router-link class="text-sm md:text-base" to="/vault/chimps"
+          <router-link class="text-sm md:text-base" to="/chimps"
             >Chimps</router-link
           >
         </nav>
