@@ -1,63 +1,91 @@
 <template>
-  <div class="nes-container mb-10">
-    <p class="title">Welcome</p>
-    <p>Welcome to Gem Farm 💎 - the #1 NFT Staking solution on Solana!</p>
-    <p class="mt-5">
-      This front-end is primarily designed for the Farm Manager (most likely the
-      dev behind the NFT project). You probably want to build a nicer front-end
-      for your stakers (farmers 👩‍🌾).
+  <div class="hello">
+    <p class="font-bold text-lg">Welcome to the IMSO NFT Staking Hub</p>
+    <p class="text-xs md:text-base pt-3 px-1 mt-1 pb-3 text-white">
+      Please connect your wallet above.<br />
+      Select the collection you would like to begin staking.<br />
     </p>
-    <p class="mt-5">
-      That said, if you're a staker, in theory nothing is stopping you from
-      using this front-end to access ALL the farms you're staking with. Simply
-      go to the
-      <router-link to="/farmer" class="text-blue-700">farmer</router-link> tab
-      and enter the farm address (ask your NFT project for it).
-    </p>
-    <p class="mt-5">
-      You can find the docs
-      <a class="text-blue-600" href="https://docs.gemworks.gg/" target="_blank"
-        >here</a
-      >.
-    </p>
-    <p class="mt-5">
-      Gem Farm is deployed at:
-      <span class="bg-yellow-100">{{ GEM_FARM_PROG_ID }}</span>
-    </p>
-  </div>
-  <div class="flex flex-row">
-    <div class="nes-container flex-1 mr-5">
-      <p class="title">Start/manage a farm</p>
-      <p class="mb-5">
-        Choose this if you have your own NFT collection you'd like to offer
-        staking for.
-      </p>
-      <router-link to="manager">
-        <button class="nes-btn is-primary">Start a farm</button>
-      </router-link>
-    </div>
-    <div class="nes-container flex-1 ml-5">
-      <p class="title">Stake your NFTs</p>
-      <p class="mb-5">
-        Choose this if you'd like to stake your NFTs at one of the existing
-        farms.
-      </p>
-      <router-link to="farmer">
-        <button class="nes-btn is-primary">Stake NFTs</button>
-      </router-link>
+    <div class="flex flex-wrap justify-center align-center pt-12">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4"
+      >
+        <div class="plain-card no-repeat bg-cover flex-none w-56 h-96">
+          <div class="container mx-auto">
+            <div class="flex flex-wrap justify-center align-center">
+              <img
+                class="object-contain border-double border-4 border-gray-600 rounded-lg"
+                alt="Arweave Image"
+                src="@/assets/clone_r2.jpg"
+              />
+            </div>
+            <div class="flex flex-wrap justify-center align-center pt-2">
+              <div class="flex items-center h-full">
+                <nav class="landing-routes">
+                  <router-link to="/clones">Meta Overlord Clones</router-link>
+                </nav>
+              </div>
+              <div>
+                <div class="items-center h-full pt-5">
+                  <p>Staking Reward</p>
+                  <P class="text-imso-yellow">1200 $SPRING per day</P>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="plain-card no-repeat bg-cover flex-none w-56 h-96">
+          <div class="container mx-auto">
+            <div class="flex flex-wrap justify-center align-center">
+              <img
+                class="object-contain border-double border-4 border-gray-600 rounded-lg"
+                alt="Arweave Image"
+                src="@/assets/elon_r2.jpeg"
+              />
+            </div>
+            <div class="flex flex-wrap justify-center align-center pt-2">
+              <div class="flex items-center h-full">
+                <nav class="flex landing-routes">
+                  <router-link to="/uniques">Unique Meta Overlords</router-link>
+                </nav>
+              </div>
+              <div>
+                <div class="items-center h-full pt-5">
+                  <p>Staking Reward</p>
+                  <P class="text-imso-yellow">2000 $SPRING per day</P>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="plain-card no-repeat bg-cover flex-none w-56 h-96">
+          <div class="container mx-auto">
+            <div class="flex flex-wrap justify-center align-center">
+              <img
+                class="object-contain border-double border-4 border-gray-600 rounded-lg"
+                alt="Arweave Image"
+                src="@/assets/metachimp_r2.jpg"
+              />
+            </div>
+            <div class="flex flex-wrap justify-center align-center pt-2">
+              <div class="flex items-center h-full">
+                <nav class="landing-routes">
+                  <router-link to="/chimps">Meta Chimp Champions</router-link>
+                </nav>
+              </div>
+              <div>
+                <div class="items-center h-full pt-5">
+                  <p>Staking Reward</p>
+                  <P class="line-through">400 $SPRING per day</P>
+                  <P class="text-imso-yellow">800 $SPRING per day</P>
+                  <P class="text-imso-yellow">until May 9th 2022</P>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue';
-import { GEM_FARM_PROG_ID } from '@gemworks/gem-farm-ts';
-export default defineComponent({
-  setup() {
-    return {
-      GEM_FARM_PROG_ID,
-    };
-  },
-});
-</script>
-<style scoped></style>
