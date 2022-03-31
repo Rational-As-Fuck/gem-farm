@@ -10,6 +10,7 @@
         <input id="farm" class="nes-input" v-model="farm" />
       </div>
     </div>
+    <div><TheStakeMeter /></div>
     <div v-if="farmerAcc">
       <FarmerDisplay
         :key="farmerAcc"
@@ -83,8 +84,9 @@ import FarmerDisplay from '@/components/gem-farm/FarmerDisplay.vue';
 import Vault from '@/components/gem-bank/Vault.vue';
 import { INFT } from '@/common/web3/NFTget';
 import { findFarmerPDA, stringifyPKsAndBNs } from '@gemworks/gem-farm-ts';
+import TheStakeMeter from "@/components/gem-farm/TheStakeMeter.vue";
 export default defineComponent({
-  components: { Vault, FarmerDisplay, ConfigPane },
+  components: { Vault, FarmerDisplay, ConfigPane, TheStakeMeter },
   setup() {
     const { wallet, getWallet } = useWallet();
     const { cluster, getConnection } = useCluster();
