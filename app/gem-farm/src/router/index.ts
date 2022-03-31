@@ -1,14 +1,29 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import Farmer from '@/views/Farmer.vue';
-import Manager from '@/views/Manager.vue';
+import BankManager from '../views/BankManager.vue';
+import VaultOwner from '../views/VaultOwner.vue';
 import Home from '@/views/Home.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Staking Home',
-    component: Farmer,
-  }
+    name: 'Home',
+    component: Home,
+  },
+  {
+    path: '/bank',
+    name: 'Bank Manager',
+    component: BankManager,
+  },
+  {
+    path: '/vault',
+    name: 'Vault Owner',
+    component: VaultOwner,
+  },
+  {
+    path: '/vault/:col',
+    name: 'collection',
+    component: VaultOwner,
+  },
 ];
 
 const router = createRouter({
