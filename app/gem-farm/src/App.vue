@@ -39,6 +39,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: white;
+  cursor: auto;
+}
+
+a {
+  cursor:pointer;
 }
 
 #background {

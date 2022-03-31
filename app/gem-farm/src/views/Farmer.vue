@@ -1,4 +1,5 @@
 <template>
+  <div><TheStakeMeter /></div>
   <ConfigPane />
   <div v-if="!wallet" class="text-center">Pls connect (burner) wallet</div>
   <div v-else>
@@ -10,7 +11,6 @@
         <input id="farm" class="nes-input" v-model="farm" />
       </div>
     </div>
-    <div><TheStakeMeter /></div>
     <div v-if="farmerAcc">
       <FarmerDisplay
         :key="farmerAcc"

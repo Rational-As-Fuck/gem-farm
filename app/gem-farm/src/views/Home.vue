@@ -2,7 +2,6 @@
   <div class="hello">
     <p class="font-bold text-lg">Welcome to the IMSO NFT Staking Hub</p>
     <p class="text-xs md:text-base pt-3 px-1 mt-1 pb-3 text-white">
-      Please connect your wallet above.<br />
       Select the collection you would like to begin staking.<br />
     </p>
     <div class="flex flex-wrap justify-center align-center pt-12">
@@ -12,11 +11,13 @@
         <div class="plain-card no-repeat bg-cover flex-none w-56 h-96">
           <div class="container mx-auto">
             <div class="flex flex-wrap justify-center align-center">
-              <img
-                class="object-contain border-double border-4 border-gray-600 rounded-lg"
-                alt="Arweave Image"
-                src="@/assets/clone_r2.jpg"
-              />
+              <router-link to="/clones">
+                <img
+                  class="object-contain border-double border-4 border-gray-600 rounded-lg"
+                  alt="Arweave Image"
+                  src="@/assets/clone_r2.jpg"
+                />
+              </router-link>
             </div>
             <div class="flex flex-wrap justify-center align-center pt-2">
               <div class="flex items-center h-full">
@@ -37,11 +38,13 @@
         <div class="plain-card no-repeat bg-cover flex-none w-56 h-96">
           <div class="container mx-auto">
             <div class="flex flex-wrap justify-center align-center">
-              <img
-                class="object-contain border-double border-4 border-gray-600 rounded-lg"
-                alt="Arweave Image"
-                src="@/assets/elon_r2.jpeg"
-              />
+              <router-link to="/uniques">
+                <img
+                  class="object-contain border-double border-4 border-gray-600 rounded-lg"
+                  alt="Arweave Image"
+                  src="@/assets/elon_r2.jpeg"
+                />
+              </router-link>
             </div>
             <div class="flex flex-wrap justify-center align-center pt-2">
               <div class="flex items-center h-full">
@@ -62,11 +65,13 @@
         <div class="plain-card no-repeat bg-cover flex-none w-56 h-96">
           <div class="container mx-auto">
             <div class="flex flex-wrap justify-center align-center">
-              <img
-                class="object-contain border-double border-4 border-gray-600 rounded-lg"
-                alt="Arweave Image"
-                src="@/assets/metachimp_r2.jpg"
-              />
+              <router-link to="/chimps">
+                <img
+                  class="object-contain border-double border-4 border-gray-600 rounded-lg"
+                  alt="Arweave Image"
+                  src="@/assets/metachimp_r2.jpg"
+                />
+              </router-link>
             </div>
             <div class="flex flex-wrap justify-center align-center pt-2">
               <div class="flex items-center h-full">
