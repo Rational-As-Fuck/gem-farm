@@ -1,18 +1,18 @@
 <template>
-  <div class="py-10 px-10 flex justify-center align-middle">
+  <!-- <div class="py-10 px-10 flex justify-center align-middle">
     <p class="text-4xl pt-3 px-1 mt-1 text-black underline">{{ collectionName }}</p>
-  </div>
+  </div> -->
   <ConfigPane />
   <div v-if="!wallet" class="text-center">Pls connect (burner) wallet</div>
   <div v-else>
     <!--farm address-->
-    <!-- <div class="nes-container with-title mb-10">
+    <div class="nes-container with-title mb-10">
       <p class="title">Connect to a Farm</p>
       <div class="nes-field mb-5">
         <label for="farm">Farm address:</label>
         <input id="farm" class="nes-input" v-model="farm" />
       </div>
-    </div> -->
+    </div>
 
     <div v-if="farmerAcc">
       <FarmerDisplay

@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { RouterLink, RouterView } from "vue-router";
+import TheAppHeader from "@/components/gem-farm/TheAppHeader.vue";
+import TheTitle from "@/components/gem-farm/TheTitle.vue";
+</script>
+
 <template>
   <div id="background" :class="$route.params.col">
     <div class="relative h-full min-h-screen">
@@ -12,13 +18,14 @@
 </div>
 </template>
 
-<script lang="ts">
+<!-- <script lang="ts">
+import { RouterLink, RouterView } from "vue-router";
 import TheTitle from '@/components/gem-farm/TheTitle.vue';
 import TheAppHeader from "@/components/gem-farm/TheAppHeader.vue";
 export default {
   components: { TheAppHeader, TheTitle },
 };
-</script>
+</script> -->
 
 <style>
 #app {
