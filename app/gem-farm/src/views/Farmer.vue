@@ -1,14 +1,25 @@
 <template>
   <!-- <div class="max-w-3xl"><TheStakeMeter /></div> -->
-  <ConfigPane />
+  <!-- <ConfigPane /> -->
   <div v-if="!wallet" class="text-center">Pls connect (burner) wallet</div>
   <div v-else>
     <!--farm address-->
-    <div class="nes-container with-title mb-10">
+    <!-- <div class="nes-container with-title mb-10">
       <p class="title">Connect to a Farm</p>
       <div class="nes-field mb-5">
         <label for="farm">Farm address:</label>
         <input id="farm" class="nes-input" v-model="farm" />
+      </div>
+    </div> -->
+    <div class="grid grid-cols-5">
+      <div/><div/>
+      <div class="with-title mb-10">
+        <div class="text-blue-400">Choose a staking farm</div>
+        <select v-model="farm">
+          <option v-for="option in options" :value="option.value">
+            {{ option.text }} 
+          </option>
+        </select>
       </div>
     </div>
     <div v-if="farmerAcc">
@@ -23,7 +34,6 @@
       />
       <Vault
         :key="farmerAcc"
-        class="mb-10"
         :vault="farmerAcc.vault.toBase58()"
         @selected-wallet-nft="handleNewSelectedNFT"
       >
@@ -99,7 +109,8 @@ export default defineComponent({
       await freshStart();
     });
     // --------------------------------------- farmer details
-    const farm = ref<string>();
+    //const farm = ref<string>();
+    const farm = ref<string>('HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9'); // Overlord Clones
     const farmAcc = ref<any>();
     const farmerIdentity = ref<string>();
     const farmerAcc = ref<any>();
@@ -219,6 +230,11 @@ export default defineComponent({
       );
     };
     return {
+      options: [
+        {text: 'Overlord Clones', value: 'HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9'},
+        {text: 'Overlord Uniques', value: 'FhmRrvxm1aiWRwgALMXJnPKBAzBjVox4Gkxi2RawbFYU'},
+        {text: 'Meta Chimps', value: '5JNBJBUYFzCmF9vJVea6cwXabp1dCQ8PRtsMRARMfPdv'}
+      ],
       wallet,
       farm,
       farmAcc,
