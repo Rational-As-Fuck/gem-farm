@@ -94,6 +94,37 @@
       @apply bg-imso-greenb justify-center !important;
   }
   
+  .wallet-button {
+    background-color: transparent;
+    border: none;
+    color: var(--swv-button-text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: 'Goldman', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    height: 36px;
+    /* line-height: 48px; */
+    line-height: initial;
+    padding: 0 24px;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    /*webkit browsers */
+    -moz-appearance: none;
+    /*Firefox */
+    appearance: none;
+    /* modern browsers */
+  }
+
+  .wallet-button-trigger {
+      @apply bg-imso-violet justify-center !important;
+  }
+  
+  .wallet-button-trigger:hover {
+      @apply bg-imso-violet-hover justify-center !important;
+  }
+
   .farm-button {
       background-color: transparent;
       border: none;
@@ -134,7 +165,7 @@
   }
   
   @media screen and (min-width: 1024px) {
-      .swv-button, .farm-button {
+      .swv-button, .farm-button, .wallet-button {
           font-size: 16px;
           height: 36px;
       }

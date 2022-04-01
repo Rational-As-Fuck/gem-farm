@@ -14,8 +14,8 @@
     <div class="grid grid-cols-5">
       <div/><div/>
       <div class="with-title mb-10">
-        <div class="text-blue-400">Choose a staking farm</div>
-        <select v-model="farm">
+        <div class="text-imso-blue">Choose a staking farm</div>
+        <select class="mx-auto swv-button farm-button-trigger" v-model="farm">
           <option v-for="option in options" :value="option.value">
             {{ option.text }} 
           </option>

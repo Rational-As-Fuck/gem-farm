@@ -19,7 +19,7 @@
         <p>
           Chimp NFT staking rewards: 400 $SPRING/ day <br />
           Clone NFTs staking rewards: 1200 $SPRING/ day <br />
-          Unique Overlord NFT staking rewards: $SPRING OFS / day
+          Unique Overlord NFT staking rewards: $SPRING / day
         </p>
       </div>
       <div
@@ -29,7 +29,7 @@
           <button class="swv-button claim-button-trigger">Claim Rewards</button>
         </div>
         <div class="flex-1">
-          <select class="swv-button farm-button-trigger" required id="wallet" v-model="chosenWallet">
+          <select class="wallet-button wallet-button-trigger" required id="wallet" v-model="chosenWallet">
             <option class="text-gray-500" :value="null">Choose wallet</option>
             <option :value="WalletName.Phantom">Phantom</option>
             <option :value="WalletName.Sollet">Sollet</option>
