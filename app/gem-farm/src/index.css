@@ -102,7 +102,7 @@
       font-family: 'Goldman', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 12px;
       font-weight: 600;
-      height: 38px;
+      height: 36px;
       margin-top: 10px;
       padding: 0 24px;
       border-radius: 5px;
@@ -126,8 +126,9 @@
       font-family: 'Goldman', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 12px;
       font-weight: 600;
-      height: 38px;
-      line-height: 48px;
+      height: 36px;
+      /* line-height: 48px; */
+      line-height: initial;
       padding: 0 24px;
       border-radius: 5px;
   }
@@ -135,6 +136,6 @@
   @media screen and (min-width: 1024px) {
       .swv-button, .farm-button {
           font-size: 16px;
-          height: 38px;
+          height: 36px;
       }
   }
