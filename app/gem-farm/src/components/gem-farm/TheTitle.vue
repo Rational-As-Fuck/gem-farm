@@ -14,12 +14,12 @@
       >
         <p class="mb-2.5">
           Stake your IMSO NFTs for OFFSPRING Token.<br />
-          You may claim your $OFS at any time.
+          You may claim your $SPRING at any time.
         </p>
         <p>
-          Chimp NFT staking rewards: 400 OFS/ day <br />
-          Clone NFTs staking rewards: 1200 OFS/ day <br />
-          Unique Overlord NFT staking rewards: 2000 OFS / day
+          Chimp NFT staking rewards: 400 $SPRING/ day <br />
+          Clone NFTs staking rewards: 1200 $SPRING/ day <br />
+          Unique Overlord NFT staking rewards: $SPRING OFS / day
         </p>
       </div>
       <div
