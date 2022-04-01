@@ -1,5 +1,5 @@
 <template>
-  <div><TheStakeMeter /></div>
+  <!-- <div class="max-w-3xl"><TheStakeMeter /></div> -->
   <ConfigPane />
   <div v-if="!wallet" class="text-center">Pls connect (burner) wallet</div>
   <div v-else>
@@ -84,9 +84,9 @@ import FarmerDisplay from '@/components/gem-farm/FarmerDisplay.vue';
 import Vault from '@/components/gem-bank/Vault.vue';
 import { INFT } from '@/common/web3/NFTget';
 import { findFarmerPDA, stringifyPKsAndBNs } from '@gemworks/gem-farm-ts';
-import TheStakeMeter from "@/components/gem-farm/TheStakeMeter.vue";
+// import TheStakeMeter from "@/components/gem-farm/TheStakeMeter.vue";
 export default defineComponent({
-  components: { Vault, FarmerDisplay, ConfigPane, TheStakeMeter },
+  components: { Vault, FarmerDisplay, ConfigPane },
   setup() {
     const { wallet, getWallet } = useWallet();
     const { cluster, getConnection } = useCluster();

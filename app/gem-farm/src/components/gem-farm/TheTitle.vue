@@ -23,7 +23,7 @@
         </p>
       </div>
       <div
-        class="absolute bottom-0 flex flex-row whitespace-nowrap"
+        class="relative md:absolute bottom-0 flex flex-row whitespace-nowrap"
       >
         <div class="basis-1/2 flex-initial">
           <button class="swv-button claim-button-trigger">Claim Rewards</button>
