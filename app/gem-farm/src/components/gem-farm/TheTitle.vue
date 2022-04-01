@@ -29,7 +29,7 @@
           <button class="swv-button claim-button-trigger">Claim Rewards</button>
         </div>
         <div class="flex-1">
-          <select required id="wallet" v-model="chosenWallet">
+          <select class="text-white px-4 py-3 rounded-md bg-imso-violet" required id="wallet" v-model="chosenWallet">
             <option class="text-gray-500" :value="null">Choose wallet..</option>
             <option :value="WalletName.Phantom">Phantom</option>
             <option :value="WalletName.Sollet">Sollet</option>
