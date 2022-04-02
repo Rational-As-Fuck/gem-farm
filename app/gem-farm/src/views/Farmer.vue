@@ -11,8 +11,7 @@
         <input id="farm" class="nes-input" v-model="farm" />
       </div>
     </div> -->
-    <div class="grid grid-cols-5">
-      <div/><div/>
+    <div class="m-auto">
       <div class="with-title mb-10">
         <div class="text-imso-blue">Choose a staking farm</div>
         <select class="mx-auto swv-button farm-button-trigger" v-model="farm">

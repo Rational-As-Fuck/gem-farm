@@ -12,7 +12,7 @@
       />
       </div>
       <div class="flex flex-wrap pt-2 px-2 h-10">
-        <div class="text-white text-base text-left">
+        <div class="text-white text-xs lg:text-base text-left">
           {{ nft.onchainMetadata.data.name }}
         </div>
       </div>
@@ -20,7 +20,7 @@
         <div>
           <div class="flex pt-2 px-2">
             <img class="h-5 w-5" alt="IMSO logo" src="@/assets/token.png" />
-            <span class="text-left pl-2 text-yellow-300 text-sm"
+            <span class="text-left pl-2 text-yellow-300 text-xs lg:text-sm"
               >Earning 2000 OFF$PRING/Day</span
             >
           </div>
@@ -74,8 +74,6 @@ export default defineComponent({
 }
 
 .card {
-  width: 150px;
-  height: 150px;
   background-image: url("/images/NFT_card_bg.png");
   @apply bg-cover;
   @apply flex-none;
@@ -90,6 +88,18 @@ export default defineComponent({
     border-style: solid;
     border-width: 2px;
     border-color: white !important;
+}
+
+@media screen and (max-width:1024px){
+  .card{
+    @apply w-48 h-80;
+    }
+}
+
+@media screen and (min-width:1025px){
+  .card{
+    @apply w-56 h-96;
+    }
 }
 
 </style>

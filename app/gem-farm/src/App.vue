@@ -14,7 +14,7 @@ import TheStakeMeter from "@/components/gem-farm/TheStakeMeter.vue";
         <p class="colheading capitalize">{{ $route.params.col }}</p>
       </div>
       <TheStakeMeter />
-      <div>
+      <div class="flex justify-center flex-wrap">
         <router-view />
       </div>
 

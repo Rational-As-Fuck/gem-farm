@@ -1,8 +1,9 @@
 <template>
+  <!-- <p class="title pb-5">{{ title }}</p> -->
   <div class="nes-container flex flex-wrap justify-center align-center">
-    <p class="title pb-5">{{ title }}</p>
     <slot />
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-2">
+    <!-- <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-3 gap-y-2"> -->
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-3 gap-4">
       <NFTCard
         v-for="nft in nfts"
         :key="nft"
