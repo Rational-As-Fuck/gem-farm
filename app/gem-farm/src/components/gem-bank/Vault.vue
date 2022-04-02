@@ -15,46 +15,45 @@
   </div>
 
   <!--wallet + vault view-->
-  <div class="flex flex-nowrap">
+  <div class="flex flex-nowrap justify-center">
     <!--left-->
-    <NFTGrid
-      title="Your wallet"
-      class="flex"
-      :nfts="desiredWalletNFTs"
-      @selected="handleWalletSelected"
-    />
-
+      <NFTGrid
+        title="Your wallet"
+        class="flex"
+        :nfts="desiredWalletNFTs"
+        @selected="handleWalletSelected"
+      />
     <!--mid-->
-    <div class="m-2 flex flex-col">
-      <ArrowButton
-        :disabled="vaultLocked"
-        class="my-2"
-        @click="moveNFTsFE(false)"
-      />
-      <ArrowButton
-        :disabled="vaultLocked"
-        class="my-2"
-        :left="true"
-        @click="moveNFTsFE(true)"
-      />
-    </div>
+      <div class="m-2 flex flex-col">
+        <ArrowButton
+          :disabled="vaultLocked"
+          class="my-2"
+          @click="moveNFTsFE(false)"
+        />
+        <ArrowButton
+          :disabled="vaultLocked"
+          class="my-2"
+          :left="true"
+          @click="moveNFTsFE(true)"
+        />
+      </div>
 
     <!--right-->
-    <NFTGrid
-      v-if="bank && vault"
-      title="Your vault"
-      class="flex"
-      :nfts="desiredVaultNFTs"
-      @selected="handleVaultSelected"
-    >
-      <div
-        v-if="vaultLocked"
-        class="locked flex-col justify-center items-center align-center"
+      <NFTGrid
+        v-if="bank && vault"
+        title="Your vault"
+        class="flex"
+        :nfts="desiredVaultNFTs"
+        @selected="handleVaultSelected"
       >
-        <p class="mt-10">This vault is locked!</p>
-      </div>
-    </NFTGrid>
-  </div>
+        <div
+          v-if="vaultLocked"
+          class="locked flex-col justify-center items-center align-center"
+        >
+          <p class="mt-10">This vault is locked!</p>
+        </div>
+      </NFTGrid>
+    </div>
 </template>
 
 <script lang="ts">
@@ -313,4 +312,34 @@ export default defineComponent({
   opacity: 0.7;
   z-index: 10;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+  margin: auto;
+}
+
+.left {
+  width: 48%;
+}
+
+.middle {
+  width: 4%;
+}
+
+.right {
+  width: 48%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 </style>

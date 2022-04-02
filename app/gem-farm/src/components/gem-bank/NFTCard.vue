@@ -4,7 +4,7 @@
     :class="{ 'card-selected': selected }"
     @click="toggleSelect"
   >
-    <div class="relative px-6 py-10 container mx-auto h-full">
+    <div class="relative pl-4 pr-6 lg:px-6 pt-5 lg:pt-10 pb-3 container mx-auto h-full">
       <div class="nft flex flex-wrap justify-center align-center px-1">
       <img
         :src="nft.externalMetadata.image"
@@ -16,19 +16,19 @@
           {{ nft.onchainMetadata.data.name }}
         </div>
       </div>
-      <div class="absolute bottom-10 flex flex-wrap h-max">
+      <div class="absolute bottom-6 lg:bottom-10 flex flex-wrap h-max">
         <div>
-          <div class="flex pt-2 px-2">
-            <img class="h-5 w-5" alt="IMSO logo" src="@/assets/token.png" />
-            <span class="text-left pl-2 text-yellow-300 text-xs lg:text-sm"
+          <div class="flex pt-2 pr-3 lg:px-2">
+            <img class="invisible lg:visible h-5 w-5" alt="IMSO logo" src="@/assets/token.png" />
+            <span class="text-left pl-0 lg:pl-2 text-yellow-300 text-xs lg:text-sm"
               >Earning 2000 OFF$PRING/Day</span
             >
           </div>
-          <div class="text-left pt-3 pl-8">
+          <div class="text-left pt-3 pl-5 lg:pl-8">
             <button
               class="h-8 px-4 m-0 text-sm text-white font-bold transition-colors duration-150 bg-imso-violet rounded-lg focus:shadow-outline hover:bg-imso-violet-hover"
             >
-              Unstake
+              Stake
             </button>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default defineComponent({
 
 @media screen and (max-width:1024px){
   .card{
-    @apply w-48 h-80;
+    @apply w-40 h-64;
     }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="nes-container">
+  <div class="nes-container m-auto">
     <p class="title">Your Staking Account</p>
     <div class="mb-2">
       state:
@@ -98,4 +98,9 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.nes-container {
+  width: fit-content;
+  margin:auto;
+}
+</style>

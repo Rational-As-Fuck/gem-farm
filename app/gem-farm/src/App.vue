@@ -7,18 +7,15 @@ import TheStakeMeter from "@/components/gem-farm/TheStakeMeter.vue";
 
 <template>
   <div id="background" :class="$route.params.col">
-    <div class="relative h-full min-h-screen">
       <TheAppHeader />
       <TheTitle />
       <div>
         <p class="colheading capitalize">{{ $route.params.col }}</p>
       </div>
       <TheStakeMeter />
-      <div class="flex justify-center flex-wrap">
+      <div>
         <router-view />
       </div>
-
-    </div>
 </div>
 </template>
 

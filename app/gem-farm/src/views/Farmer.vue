@@ -93,7 +93,6 @@ import FarmerDisplay from '@/components/gem-farm/FarmerDisplay.vue';
 import Vault from '@/components/gem-bank/Vault.vue';
 import { INFT } from '@/common/web3/NFTget';
 import { findFarmerPDA, stringifyPKsAndBNs } from '@gemworks/gem-farm-ts';
-// import TheStakeMeter from "@/components/gem-farm/TheStakeMeter.vue";
 export default defineComponent({
   components: { Vault, FarmerDisplay, ConfigPane },
   setup() {
@@ -255,4 +254,9 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.nes-container {
+  width: fit-content;
+  margin:auto;
+}
+</style>
