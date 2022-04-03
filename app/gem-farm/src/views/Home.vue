@@ -28,7 +28,7 @@
               <div>
                 <div class="items-center h-full pt-5">
                   <p>Staking Reward</p>
-                  <p class="text-imso-yellow">1200 $SpRING per day</p>
+                  <p class="text-imso-yellow">1200 $SPRING per day</p>
                 </div>
               </div>
             </div>
@@ -55,7 +55,7 @@
               <div>
                 <div class="items-center h-full pt-5">
                   <p>Staking Reward</p>
-                  <p class="text-imso-yellow">2000 $SpRING per day</p>
+                  <p class="text-imso-yellow">2000 $SPRING per day</p>
                 </div>
               </div>
             </div>
@@ -82,8 +82,8 @@
               <div>
                 <div class="items-center h-full pt-5">
                   <p>Staking Reward</p>
-                  <p class="line-through">400 $SpRING per day</p>
-                  <p class="text-imso-yellow">800 $SpRING per day</p>
+                  <p class="line-through">400 $SPRING per day</p>
+                  <p class="text-imso-yellow">800 $SPRING per day</p>
                   <p class="text-imso-yellow">until May 9th 2022</p>
                 </div>
               </div>

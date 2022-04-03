@@ -19,7 +19,7 @@
         <p>
           Chimp NFT staking rewards: 400 $SPRING/ day <br />
           Clone NFTs staking rewards: 1200 $SPRING/ day <br />
-          Unique Overlord NFT staking rewards: $SPRING / day
+          Unique Overlord NFT staking rewards: 2000 $SPRING / day
         </p>
       </div>
       <div

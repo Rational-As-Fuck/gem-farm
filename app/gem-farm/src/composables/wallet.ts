@@ -53,7 +53,7 @@ export default function useWallet() {
         console.log(
           'wallet successfully connected',
           newWallet,
-          network.substr(0, 20)
+          network.substr(0, 20),
         );
       })
       .catch(() => {
@@ -65,6 +65,10 @@ export default function useWallet() {
 
   const getWalletName = (): WalletName | null => {
     if (walletClass.value) {
+      console.log(
+        'walletClass.value',
+        walletClass.value.name,
+        );
       return walletClass.value.name;
     }
     return null;
