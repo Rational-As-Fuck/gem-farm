@@ -42,33 +42,33 @@
       >
         <button
           v-if="farmerState === 'staked' && selectedNFTs.length > 0"
-          class="nes-btn is-primary mr-5"
+          class="stake-button-trigger stake-btn is-primary mr-5"
           @click="addGems"
         >
           Add Gems (resets staking)
         </button>
         <button
           v-if="farmerState === 'unstaked'"
-          class="nes-btn is-success mr-5"
+          class="stake-button-trigger stake-btn is-success mr-5"
           @click="beginStaking"
         >
           Begin staking
         </button>
         <button
           v-if="farmerState === 'staked'"
-          class="nes-btn is-error mr-5"
+          class="stake-button-trigger stake-btn is-error mr-5"
           @click="endStaking"
         >
           End staking
         </button>
         <button
           v-if="farmerState === 'pendingCooldown'"
-          class="nes-btn is-error mr-5"
+          class="stake-button-trigger stake-btn is-error mr-5"
           @click="endStaking"
         >
           End cooldown
         </button>
-        <button class="nes-btn is-warning" @click="claim">
+        <button class="stake-button-trigger stake-btn is-warning" @click="claim">
           Claim {{ availableA }} A / {{ availableB }} B
         </button>
       </Vault>
@@ -78,7 +78,7 @@
         Farmer account not found :( Create a new one?
       </div>
       <div class="w-full text-center">
-        <button class="nes-btn is-primary" @click="initFarmer">
+        <button class="nes-button-trigger nes-btn is-primary" @click="initFarmer">
           New Farmer
         </button>
       </div>
@@ -292,4 +292,26 @@ export default {
   width: fit-content;
   margin:auto;
 }
+.stake-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--swv-button-text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: 'Goldman', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    height: 36px;
+    line-height: initial;
+    padding: 0 24px;
+    border-radius: 5px;
+}
+  .stake-button-trigger {
+      @apply bg-imso-greena justify-center !important;
+  }
+  
+  .stake-button-trigger:hover {
+      @apply bg-imso-greenb justify-center !important;
+  }
 </style>

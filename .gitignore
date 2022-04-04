@@ -2,6 +2,10 @@
 # ------------------------------------------------------------------------------ node
 # https://github.com/github/gitignore/blob/master/Node.gitignore
 
+# Temp
+*.bak
+*.notused
+
 # Logs
 logs
 *.log

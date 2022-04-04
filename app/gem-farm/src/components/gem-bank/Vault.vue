@@ -1,12 +1,12 @@
 <template>
   <!--control buttons-->
-  <div class="mb-10 flex justify-center">
+  <div class="stake-buttons mb-10 flex justify-center pt-8">
     <button
       v-if="
         (toWalletNFTs && toWalletNFTs.length) ||
         (toVaultNFTs && toVaultNFTs.length)
       "
-      class="nes-btn is-primary mr-5"
+      class="stake-button-trigger stake-btn is-primary mr-5"
       @click="moveNFTsOnChain"
     >
       Move Gems!
@@ -341,5 +341,28 @@ export default defineComponent({
   display: table;
   clear: both;
 }
+
+.stake-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--swv-button-text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: 'Goldman', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    height: 36px;
+    line-height: initial;
+    padding: 0 24px;
+    border-radius: 5px;
+}
+  .stake-button-trigger {
+      @apply bg-imso-greena justify-center !important;
+  }
+  
+  .stake-button-trigger:hover {
+      @apply bg-imso-greenb justify-center !important;
+  }
 
 </style>
