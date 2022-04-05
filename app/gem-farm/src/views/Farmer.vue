@@ -17,14 +17,16 @@
     <div class="m-auto">
       <div class="with-title mb-10">
         <div class="text-imso-blue">Choose a staking farm</div>
-        <!-- <select id="colsel" class="mx-auto swv-button farm-button-trigger" v-model="farm" v-on:change="changeRoute($event)"> -->
-        <select id="colsel" class="mx-auto swv-button farm-button-trigger" v-model="farm">
+        <select id="colsel" class="mx-auto swv-button farm-button-trigger" v-model="farm" v-on:change="changeRoute($event)">
+        <!-- <select id="colsel" class="mx-auto swv-button farm-button-trigger" v-model="farm"> -->
+        <!-- <select name="format" id="format" v-on:change="changeRoute($event)"> -->
           <option v-for="option in options" :value="option.value">
             {{ option.text }} 
           </option>
         </select>
       </div>
     </div>
+    
     <div v-if="farmerAcc">
       <FarmerDisplay
         :key="farmerAcc"
@@ -272,6 +274,18 @@ export default defineComponent({
       handleNewSelectedNFT,
       addGems,
     };
+  },
+  methods: {
+    changeRoute(e: any) {
+      if (e.target.value == 'HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9') {
+        // this.$router.push("/" + e.target.value);
+        this.$router.push("/clones");
+      } else if (e.target.value == 'FhmRrvxm1aiWRwgALMXJnPKBAzBjVox4Gkxi2RawbFYU') {
+        this.$router.push("/uniques");
+      } else if (e.target.value == '5JNBJBUYFzCmF9vJVea6cwXabp1dCQ8PRtsMRARMfPdv') {
+        this.$router.push("/chimps");
+      }
+    },
   },
 });
 </script>
