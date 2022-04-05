@@ -7,8 +7,8 @@
         {{ parseFarmerState(farmerAcc) }}
       </p>
     </div>
-    <div class="mb-2">Your identity: {{ farmerAcc.identity.toBase58() }}</div>
-    <div class="mb-2">Associated vault: {{ farmerAcc.vault.toBase58() }}</div>
+    <div class="mb-2 text-xs md:text-base break-words">Your identity: {{ farmerAcc.identity.toBase58() }}</div>
+    <div class="mb-2 text-xs md:text-base break-words">Associated vault: {{ farmerAcc.vault.toBase58() }}</div>
     <div class="mb-2">Gems staked: {{ farmerAcc.gemsStaked }}</div>
     <div class="mb-2">
       Min staking ends: {{ parseDate(farmerAcc.minStakingEndsTs) }}
@@ -18,7 +18,7 @@
     </div>
 
     <div class="flex mb-5">
-      <div class="flex-1 mr-5">
+      <div class="flex-1 mr-0 md:mr-5">
         <FarmerRewardDisplay
           :key="farmerAcc.rewardA"
           :farmReward="farmAcc.rewardA"
@@ -35,7 +35,7 @@
         />
       </div> -->
     </div>
-    <button class="nes-btn is-primary mb-5" @click="refreshFarmer">
+    <button class="stake-button-trigger stake-btn is-primary mb-5 m-auto" @click="refreshFarmer">
       Refresh account
     </button>
   </div>
@@ -103,4 +103,27 @@ export default defineComponent({
   width: fit-content;
   margin:auto;
 }
+
+.stake-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--swv-button-text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: 'Goldman', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    height: 36px;
+    line-height: initial;
+    padding: 0 24px;
+    border-radius: 5px;
+}
+  .stake-button-trigger {
+      @apply bg-imso-greena justify-center !important;
+  }
+  
+  .stake-button-trigger:hover {
+      @apply bg-imso-greenb justify-center !important;
+  }
 </style>

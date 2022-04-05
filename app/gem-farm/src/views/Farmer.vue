@@ -75,7 +75,7 @@
       <div class="flex">
         <div class="plain-card no-repeat bg-cover flex-none">
           <div class="container mx-auto">
-            <p>Farmer account not found for the {{ $route.params.col }} collection</p>
+            <p class="text-xs md:text-base">Farmer account not found for the {{ $route.params.col }} collection</p>
           </div>
           <div class="container mx-auto">
             <button class="farm-button farm-button-trigger" @click="initFarmer">
