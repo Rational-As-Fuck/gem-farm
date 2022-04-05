@@ -1,5 +1,5 @@
 <template>
-  <div class="nes-container flex flex-wrap justify-center align-center">
+  <div class="nes-container p-0 md:px-8 md:py-6 flex flex-wrap justify-center align-center">
     <!-- <div class="flex flex-row title pb-5 min-w-full justify-center">{{ title }}</div> -->
     <!-- <div class="flex flex-row title pb-5 min-w-full justify-end">Move Selected NFTs</div> -->
     <!-- <div class="border-2 border-imso-greena flex flex-wrap justify-center align-center"> -->

@@ -26,14 +26,14 @@
           title="Reward A"
         />
       </div>
-      <div class="flex-1">
+      <!-- <div class="flex-1">
         <FarmerRewardDisplay
           :key="farmerAcc.rewardB"
           :farmReward="farmAcc.rewardB"
           :reward="farmerAcc.rewardB"
           title="Reward B"
         />
-      </div>
+      </div> -->
     </div>
     <button class="nes-btn is-primary mb-5" @click="refreshFarmer">
       Refresh account

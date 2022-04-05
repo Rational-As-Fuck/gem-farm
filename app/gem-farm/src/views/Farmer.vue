@@ -1,6 +1,4 @@
 <template>
-  <!-- <div class="max-w-3xl"><TheStakeMeter /></div> -->
-  <!-- <ConfigPane /> -->
   <div v-if="!wallet" class="text-center">
     <p>Please click on Choose Wallet above to connect your Solana wallet.</p>
     <p>Make sure this wallet is set to the same account that contains your IMSO NFTs.</p>
@@ -18,8 +16,6 @@
       <div class="with-title mb-10">
         <div class="text-imso-blue">Choose a staking farm</div>
         <select id="colsel" class="mx-auto swv-button farm-button-trigger" v-model="farm" v-on:change="changeRoute($event)">
-        <!-- <select id="colsel" class="mx-auto swv-button farm-button-trigger" v-model="farm"> -->
-        <!-- <select name="format" id="format" v-on:change="changeRoute($event)"> -->
           <option v-for="option in options" :value="option.value">
             {{ option.text }} 
           </option>
@@ -75,17 +71,6 @@
         </button>
       </Vault>
     </div>
-    <!-- <div v-else>
-      <div class="w-full text-center mb-5">
-        Farmer account not found :( Create a new one?
-      </div>
-      <div class="w-full text-center">
-        <button class="nes-button-trigger nes-btn is-primary" @click="initFarmer">
-          New Farmer
-        </button>
-      </div>
-    </div> -->
-
     <div v-else class="flex flex-wrap justify-center align-center pt-12">
       <div class="flex">
         <div class="plain-card no-repeat bg-cover flex-none">
@@ -99,9 +84,7 @@
           </div>
         </div>
       </div>
-  </div>
-
-
+    </div>
   </div>
 </template>
 
