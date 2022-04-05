@@ -278,28 +278,16 @@ export default defineComponent({
   methods: {
     changeRoute(e: any) {
       if (e.target.value == 'HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9') {
-        // this.$router.push("/" + e.target.value);
         this.$router.push("/clones");
       } else if (e.target.value == 'FhmRrvxm1aiWRwgALMXJnPKBAzBjVox4Gkxi2RawbFYU') {
         this.$router.push("/uniques");
       } else if (e.target.value == '5JNBJBUYFzCmF9vJVea6cwXabp1dCQ8PRtsMRARMfPdv') {
         this.$router.push("/chimps");
-      }
-    },
+      };
+    }
   },
 });
 </script>
-
-<!-- <script>
-export default {
-  name: "ChangeRoute",
-  methods: {
-    changeRoute(e) {
-      this.$router.push("/" + e.target.value);
-    },
-  },
-};
-</script> -->
 
 <style scoped>
 .nes-container {
