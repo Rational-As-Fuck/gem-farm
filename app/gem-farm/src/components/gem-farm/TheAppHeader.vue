@@ -4,7 +4,7 @@
       class="w-full bg-gray-800 text-white py-4 px-5 md:px-8 shadow-md sm:flex items-center border-b border-gray-400/50"
     >
       <div class="items-center h-full hidden sm:flex">
-        <a href="/">
+        <a href="/farmer">
           <img
             class="h-8"
             alt="IMSO Staking Hub logo"

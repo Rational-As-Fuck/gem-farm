@@ -2,7 +2,8 @@
 import { RouterLink, RouterView } from "vue-router";
 import TheAppHeader from "@/components/gem-farm/TheAppHeader.vue";
 import TheTitle from "@/components/gem-farm/TheTitle.vue";
-import TheStakeMeter from "@/components/gem-farm/TheStakeMeter.vue";
+// import TheStakeMeter from "@/components/gem-farm/TheStakeMeter.vue";
+// import TheCollectionSelect from "@/components/gem-farm/TheCollectionSelect.vue";
 </script>
 
 <template>
@@ -12,7 +13,7 @@ import TheStakeMeter from "@/components/gem-farm/TheStakeMeter.vue";
       <div>
         <p class="colheading capitalize">{{ $route.params.col }}</p>
       </div>
-      <TheStakeMeter />
+      <!-- <TheStakeMeter /> -->
       <div>
         <router-view />
       </div>

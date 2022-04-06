@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-wrap justify-center align-center pb-12 pt-8">
     <div class="flex-initial w-48 sm:w-72 md:w-72 lg:w-96 h-auto pr-7">
-      <a href="/">
+      <a href="/farmer">
         <img alt="IMSO logo" src="@/assets/IMSO_StakHub_logo.png" />
       </a>
     </div>
