@@ -1,5 +1,15 @@
 <template>
-  <div class="flex flex-wrap justify-center align-center pb-12 pt-8">
+  <div class="flex flex-row justify-end p-5">
+      <select class="wallet-button wallet-button-trigger" required id="wallet" v-model="chosenWallet">
+        <option class="text-gray-500" :value="null">Connect Wallet</option>
+        <option :value="WalletName.Phantom">Phantom</option>
+        <option :value="WalletName.Sollet">Sollet</option>
+        <option :value="WalletName.SolletExtension">Sollet Extension</option>
+        <option :value="WalletName.Solflare">Solflare</option>
+        <option :value="WalletName.SolflareWeb">Solflare Web</option>
+      </select>
+  </div>
+  <div class="flex flex-wrap justify-center align-center pb-12 pt-2">
     <div class="flex-initial w-48 sm:w-72 md:w-72 lg:w-96 h-auto pr-7">
       <a href="/farmer">
         <img alt="IMSO logo" src="@/assets/IMSO_StakHub_logo.png" />
@@ -17,17 +27,17 @@
           You may claim your $SPRING at any time.
         </p>
         <p>
-          Chimp NFT staking rewards: 400 $SPRING/ day <br />
-          Clone NFTs staking rewards: 1200 $SPRING/ day <br />
-          Unique Overlord NFT staking rewards: 2000 $SPRING / day
+          Unique Overlord NFT staking rewards: 2000 $SPRING / day<br />
+          Clone NFTs staking rewards: 1200 $SPRING / day <br />
+          Chimp NFT staking rewards: <br />
+          <span class="line-through">400 $SPRING / day</span>
+          <span class="text-ims">   800 $SPRING / day*</span>
+          <p class="text-imso-yellow relative md:absolute bottom-0 flex flex-row whitespace-nowrap">*until May 9th 2022</p>
         </p>
       </div>
-      <div
+      <!-- <div
         class="relative md:absolute bottom-0 flex flex-row whitespace-nowrap"
       >
-        <div class="basis-1/2 flex-initial pr-3">
-          <button class="swv-button claim-button-trigger">Claim Rewards</button>
-        </div>
         <div class="flex-1">
           <select class="wallet-button wallet-button-trigger" required id="wallet" v-model="chosenWallet">
             <option class="text-gray-500" :value="null">Choose wallet</option>
@@ -38,7 +48,7 @@
             <option :value="WalletName.SolflareWeb">Solflare Web</option>
           </select>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

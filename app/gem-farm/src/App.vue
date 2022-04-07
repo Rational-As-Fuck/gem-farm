@@ -10,13 +10,9 @@ import TheTitle from "@/components/gem-farm/TheTitle.vue";
   <div id="background" :class="$route.params.col">
       <TheAppHeader />
       <TheTitle />
-      <div>
-        <p class="colheading capitalize">{{ $route.params.col }}</p>
-      </div>
-      <!-- <TheStakeMeter /> -->
-      <div>
-        <router-view />
-      </div>
+    <div>
+      <router-view />
+    </div>
 </div>
 </template>
 

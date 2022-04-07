@@ -35,7 +35,7 @@
         />
       </div> -->
     </div>
-    <button class="stake-button-trigger stake-btn is-primary mb-5 m-auto" @click="refreshFarmer">
+    <button class="stake-button-trigger stake-btn is-primary mb-5 mx-auto" @click="refreshFarmer">
       Refresh account
     </button>
   </div>

@@ -1,99 +1,10 @@
 <template>
   <div v-if="!wallet" class="text-sm md:text-base text-center">
     <p class="font-bold text-lg">Welcome to the IMSO NFT Staking Hub</p>
-    <p>Please click on Choose Wallet above to connect your Solana wallet.</p>
+    <p>Please click on Connect Wallet above to connect your Solana wallet.</p>
     <p>Make sure this wallet is set to the same account that contains your IMSO NFTs.</p>
     <p>You will also need a small amout of Solana in that wallet for gas to interact with the staking farms</p>
-    <div class="hello">
-      <div class="flex flex-wrap justify-center align-center pt-12">
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4"
-        >
-          <div class="plain-card no-repeat bg-cover flex-none w-56 h-96">
-            <div class="container mx-auto">
-              <div class="flex flex-wrap justify-center align-center">
-                <router-link to="/clones">
-                  <img
-                    class="object-contain border-double border-4 border-gray-600 rounded-lg"
-                    alt="Arweave Image"
-                    src="@/assets/clone_r2.jpg"
-                  />
-                </router-link>
-              </div>
-              <div class="flex flex-wrap justify-center align-center pt-2">
-                <div class="flex items-center h-full">
-                  <nav class="landing-routes">
-                    <router-link to="/clones">Meta Overlord Clones</router-link>
-                  </nav>
-                </div>
-                <div>
-                  <div class="items-center h-full pt-5">
-                    <p>Staking Reward</p>
-                    <p class="text-imso-yellow">1200 $SPRING per day</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="plain-card no-repeat bg-cover flex-none w-56 h-96">
-            <div class="container mx-auto">
-              <div class="flex flex-wrap justify-center align-center">
-                <router-link to="/uniques">
-                  <img
-                    class="object-contain border-double border-4 border-gray-600 rounded-lg"
-                    alt="Arweave Image"
-                    src="@/assets/elon_r2.jpeg"
-                  />
-                </router-link>
-              </div>
-              <div class="flex flex-wrap justify-center align-center pt-2">
-                <div class="flex items-center h-full">
-                  <nav class="flex landing-routes">
-                    <router-link to="/uniques">Unique Meta Overlords</router-link>
-                  </nav>
-                </div>
-                <div>
-                  <div class="items-center h-full pt-5">
-                    <p>Staking Reward</p>
-                    <p class="text-imso-yellow">2000 $SPRING per day</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="plain-card no-repeat bg-cover flex-none w-56 h-96">
-            <div class="container mx-auto">
-              <div class="flex flex-wrap justify-center align-center">
-                <router-link to="/chimps">
-                  <img
-                    class="object-contain border-double border-4 border-gray-600 rounded-lg"
-                    alt="Arweave Image"
-                    src="@/assets/metachimp_r2.jpg"
-                  />
-                </router-link>
-              </div>
-              <div class="flex flex-wrap justify-center align-center pt-2">
-                <div class="flex items-center h-full">
-                  <nav class="landing-routes">
-                    <router-link to="/chimps">Meta Chimp Champions</router-link>
-                  </nav>
-                </div>
-                <div>
-                  <div class="items-center h-full pt-5">
-                    <p>Staking Reward</p>
-                    <p class="line-through">400 $SPRING per day</p>
-                    <p class="text-imso-yellow">800 $SPRING per day</p>
-                    <p class="text-imso-yellow">until May 9th 2022</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <CollectionCards />
   </div>
   <div v-else>
     <!--farm address-->
@@ -104,19 +15,29 @@
         <input id="farm" class="nes-input" v-model="farm" />
       </div>
     </div> -->
+    <div v-if="farm">
+      <div>
+        <p class="colheading capitalize">{{ $route.params.col }}</p>
+      </div>
+      <TheStakeMeter />
+    </div>
     <div class="m-auto">
-      <div class="with-title mb-10">
+      <p class="text-xs md:text-sm">Please choose the farm you would like to manage</p>
+      <p class="text-xs md:text-sm">If your seelcted farm does not yet exist for your connected wallet, you can create a new one</p>
+      <div class="with-title mb-10 mt-3">
         <select id="colsel" class="mx-auto swv-button farm-button-trigger" v-model="farm" v-on:change="changeRoute($event)">
-          <option selected disabled value="">Select Farm Here</option>
+          <option selected disabled value="">Select Farm</option>
           <option v-for="option in options" :value="option.value">
             {{ option.text }} 
           </option>
         </select>
       </div>
     </div>
-    
+    <div v-if="!farm">
+      <CollectionCards />
+    </div>
+
     <div v-if="farmerAcc">
-      <TheStakeMeter />
       <FarmerDisplay
         :key="farmerAcc"
         :farm="farm"
@@ -165,10 +86,10 @@
       </Vault>
     </div>
     <div v-else class="flex flex-wrap justify-center align-center pt-12">
-      <div class="flex">
+      <div v-if="farm" class="flex">
         <div class="plain-card no-repeat bg-cover flex-none">
           <div class="container mx-auto">
-            <p class="text-xs md:text-base">Farmer account not found for the {{ $route.params.col }} collection</p>
+            <p class="text-xs md:text-base">Farmer account not found for the <strong>{{ $route.params.col }} collection</strong></p>
           </div>
           <div class="container mx-auto">
             <button class="farm-button farm-button-trigger" @click="initFarmer">
@@ -192,11 +113,12 @@ import { PublicKey } from '@solana/web3.js';
 import ConfigPane from '@/components/ConfigPane.vue';
 import TheStakeMeter from '@/components/gem-farm/TheStakeMeter.vue';
 import FarmerDisplay from '@/components/gem-farm/FarmerDisplay.vue';
+import CollectionCards from '@/components/gem-farm/CollectionCards.vue';
 import Vault from '@/components/gem-bank/Vault.vue';
 import { INFT } from '@/common/web3/NFTget';
 import { findFarmerPDA, stringifyPKsAndBNs } from '@gemworks/gem-farm-ts';
 export default defineComponent({
-  components: { Vault, FarmerDisplay, ConfigPane, TheStakeMeter },
+  components: { Vault, FarmerDisplay, ConfigPane, TheStakeMeter, CollectionCards },
   setup() {
     const { wallet, getWallet } = useWallet();
     const { cluster, getConnection } = useCluster();
@@ -209,9 +131,9 @@ export default defineComponent({
       await freshStart();
     });
     // --------------------------------------- farmer details
-    //const farm = ref<string>();
+    const farm = ref<string>('');
     //const farm = farmid; // Overlord Clones
-    const farm = ref<string>('HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9'); // Overlord Clones
+    //const farm = ref<string>('HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9'); // Overlord Clones
     const farmAcc = ref<any>();
     const farmerIdentity = ref<string>();
     const farmerAcc = ref<any>();

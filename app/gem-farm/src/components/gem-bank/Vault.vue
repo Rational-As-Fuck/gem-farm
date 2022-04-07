@@ -1,6 +1,6 @@
 <template>
   <!--control buttons-->
-  <div class="stake-buttons mb-10 flex justify-center pt-8">
+  <div class="stake-buttons mb-10 flex justify-center pt-4">
     <button
       v-if="
         (toWalletNFTs && toWalletNFTs.length) ||
@@ -15,7 +15,7 @@
   </div>
 
   <!--wallet + vault view-->
-  <div class="flex flex-nowrap justify-center">
+  <div class="flex flex-nowrap justify-center mx-auto">
     <!--left-->
       <NFTGrid
         title="Your wallet"
