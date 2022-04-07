@@ -5,7 +5,7 @@
     <!-- <div class="border-2 border-imso-greena flex flex-wrap justify-center align-center"> -->
       
     <slot />
-    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-4 pt-8 pb-8 items-baseline">
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-4 pt-8 pb-8">
       <NFTCard
         v-for="nft in nfts"
         :key="nft"
