@@ -253,16 +253,16 @@ export default defineComponent({
       );
     };
     return {
-      options: [
-        {text: 'Overlord Clones', value: 'HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9'},
-        {text: 'Overlord Uniques', value: 'FhmRrvxm1aiWRwgALMXJnPKBAzBjVox4Gkxi2RawbFYU'},
-        {text: 'Meta Chimps', value: '5JNBJBUYFzCmF9vJVea6cwXabp1dCQ8PRtsMRARMfPdv'}
-      ],
       // options: [
-      //   {text: 'Overlord Clones', value: '9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4'},
-      //   {text: 'Overlord Uniques', value: 'GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs'},
-      //   {text: 'Meta Chimps', value: '3owWkikZXpWGdmhQf3xhaYf8GMPRr2b9EjSmXQFZ2Vp4'}
+      //   {text: 'Overlord Clones', value: 'HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9'},
+      //   {text: 'Overlord Uniques', value: 'FhmRrvxm1aiWRwgALMXJnPKBAzBjVox4Gkxi2RawbFYU'},
+      //   {text: 'Meta Chimps', value: '5JNBJBUYFzCmF9vJVea6cwXabp1dCQ8PRtsMRARMfPdv'}
       // ],
+      options: [
+        {text: 'Overlord Clones', value: '9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4'},
+        {text: 'Overlord Uniques', value: 'GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs'},
+        {text: 'Meta Chimps', value: '3owWkikZXpWGdmhQf3xhaYf8GMPRr2b9EjSmXQFZ2Vp4'}
+      ],
       wallet,
       farm,
       farmAcc,
@@ -282,24 +282,24 @@ export default defineComponent({
     };
   },
   methods: {
-    changeRoute(e: any) {
-      if (e.target.value == 'HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9') {
-        this.$router.push("/clones");
-      } else if (e.target.value == 'FhmRrvxm1aiWRwgALMXJnPKBAzBjVox4Gkxi2RawbFYU') {
-        this.$router.push("/uniques");
-      } else if (e.target.value == '5JNBJBUYFzCmF9vJVea6cwXabp1dCQ8PRtsMRARMfPdv') {
-        this.$router.push("/chimps");
-      };
-    }
     // changeRoute(e: any) {
-    //   if (e.target.value == '9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4') {
+    //   if (e.target.value == 'HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9') {
     //     this.$router.push("/clones");
-    //   } else if (e.target.value == 'GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs') {
+    //   } else if (e.target.value == 'FhmRrvxm1aiWRwgALMXJnPKBAzBjVox4Gkxi2RawbFYU') {
     //     this.$router.push("/uniques");
-    //   } else if (e.target.value == '3owWkikZXpWGdmhQf3xhaYf8GMPRr2b9EjSmXQFZ2Vp4') {
+    //   } else if (e.target.value == '5JNBJBUYFzCmF9vJVea6cwXabp1dCQ8PRtsMRARMfPdv') {
     //     this.$router.push("/chimps");
     //   };
     // }
+    changeRoute(e: any) {
+      if (e.target.value == '9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4') {
+        this.$router.push("/clones");
+      } else if (e.target.value == 'GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs') {
+        this.$router.push("/uniques");
+      } else if (e.target.value == '3owWkikZXpWGdmhQf3xhaYf8GMPRr2b9EjSmXQFZ2Vp4') {
+        this.$router.push("/chimps");
+      };
+    }
   },
 });
 </script>
