@@ -84,7 +84,7 @@ export default defineComponent({
   @apply border-2 border-solid border-gray-200;
 }
 
-.card-selected[data-v-6e7b8447] {
+.card-selected {
     border-style: solid;
     border-width: 2px;
     border-color: white !important;
