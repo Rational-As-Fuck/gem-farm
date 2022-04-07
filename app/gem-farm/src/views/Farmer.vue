@@ -38,15 +38,18 @@
     </div>
 
     <div v-if="farmerAcc">
-      <FarmerDisplay
-        :key="farmerAcc"
-        :farm="farm"
-        :farmAcc="farmAcc"
-        :farmer="farmer"
-        :farmerAcc="farmerAcc"
-        class="mb-10"
-        @refresh-farmer="handleRefreshFarmer"
-      />
+      <button class="farm-button farm-button-trigger mb-7" @click="isHidden = !isHidden">Show/Hide farm Details</button>
+      <div v-if="!isHidden">
+        <FarmerDisplay
+          :key="farmerAcc"
+          :farm="farm"
+          :farmAcc="farmAcc"
+          :farmer="farmer"
+          :farmerAcc="farmerAcc"
+          class="mb-10"
+          @refresh-farmer="handleRefreshFarmer"
+        />
+      </div>
       <Vault
         :key="farmerAcc"
         :vault="farmerAcc.vault.toBase58()"
@@ -81,7 +84,7 @@
           End cooldown
         </button>
         <button class="stake-button-trigger stake-btn is-warning" @click="claim">
-          Claim {{ availableA }} A / {{ availableB }} B
+          Claim {{ availableA }}
         </button>
       </Vault>
     </div>
@@ -118,6 +121,11 @@ import Vault from '@/components/gem-bank/Vault.vue';
 import { INFT } from '@/common/web3/NFTget';
 import { findFarmerPDA, stringifyPKsAndBNs } from '@gemworks/gem-farm-ts';
 export default defineComponent({
+  data() {
+    return {
+      isHidden: true,
+    };
+  },
   components: { Vault, FarmerDisplay, ConfigPane, TheStakeMeter, CollectionCards },
   setup() {
     const { wallet, getWallet } = useWallet();
@@ -145,9 +153,13 @@ export default defineComponent({
       await freshStart();
     });
     const updateAvailableRewards = async () => {
-      availableA.value = farmerAcc.value.rewardA.accruedReward
+      availableA.value = (farmerAcc.value.rewardA.accruedReward)
         .sub(farmerAcc.value.rewardA.paidOutReward)
         .toString();
+      let adjRewards: any =  availableA.value;
+      let rewards: number =  (adjRewards / 1000000);
+      availableA.value = rewards.toLocaleString("en-US");
+      console.log('availableA: ' + availableA.value)
       availableB.value = farmerAcc.value.rewardB.accruedReward
         .sub(farmerAcc.value.rewardB.paidOutReward)
         .toString();
@@ -253,11 +265,6 @@ export default defineComponent({
       );
     };
     return {
-      // options: [
-      //   {text: 'Overlord Clones', value: 'HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9'},
-      //   {text: 'Overlord Uniques', value: 'FhmRrvxm1aiWRwgALMXJnPKBAzBjVox4Gkxi2RawbFYU'},
-      //   {text: 'Meta Chimps', value: '5JNBJBUYFzCmF9vJVea6cwXabp1dCQ8PRtsMRARMfPdv'}
-      // ],
       options: [
         {text: 'Overlord Clones', value: '9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4'},
         {text: 'Overlord Uniques', value: 'GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs'},
@@ -282,15 +289,6 @@ export default defineComponent({
     };
   },
   methods: {
-    // changeRoute(e: any) {
-    //   if (e.target.value == 'HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9') {
-    //     this.$router.push("/clones");
-    //   } else if (e.target.value == 'FhmRrvxm1aiWRwgALMXJnPKBAzBjVox4Gkxi2RawbFYU') {
-    //     this.$router.push("/uniques");
-    //   } else if (e.target.value == '5JNBJBUYFzCmF9vJVea6cwXabp1dCQ8PRtsMRARMfPdv') {
-    //     this.$router.push("/chimps");
-    //   };
-    // }
     changeRoute(e: any) {
       if (e.target.value == '9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4') {
         this.$router.push("/clones");
@@ -332,7 +330,3 @@ export default defineComponent({
       @apply bg-imso-greenb justify-center !important;
   }
 </style>
-
-<!-- 3owWkikZXpWGdmhQf3xhaYf8GMPRr2b9EjSmXQFZ2Vp4 - chimp
-9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4 - clones
-GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs - uniques -->

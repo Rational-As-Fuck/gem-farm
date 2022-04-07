@@ -16,21 +16,21 @@
           {{ nft.onchainMetadata.data.name }}
         </div>
       </div>
-      <div class="absolute bottom-6 lg:bottom-10 flex flex-wrap h-max">
+      <div v-if="title == 'Your vault'" class="absolute bottom-6 lg:bottom-10 flex flex-wrap h-max">
         <div>
           <div class="flex pt-2 pr-3 lg:px-2">
             <img class="invisible lg:visible h-5 w-5" alt="IMSO logo" src="@/assets/token.png" />
             <span class="text-left pl-0 lg:pl-2 text-yellow-300 text-xs lg:text-sm"
-              >Earning 2000 OFF$PRING/Day</span
+              >{{ colRewards }}</span
             >
           </div>
-          <div class="text-left pt-3 pl-5 lg:pl-8">
+          <!-- <div class="text-left pt-3 pl-5 lg:pl-8">
             <button
               class="h-8 px-4 m-0 text-sm text-white font-bold transition-colors duration-150 bg-imso-violet rounded-lg focus:shadow-outline hover:bg-imso-violet-hover"
             >
               Stake
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -42,6 +42,7 @@ import { defineComponent, ref } from 'vue';
 export default defineComponent({
   props: {
     nft: { type: Object, required: true },
+    title: String
   },
   emits: ['selected'],
   setup(props, ctx) {
@@ -60,6 +61,28 @@ export default defineComponent({
       selected,
       toggleSelect,
     };
+  },
+  methods: {
+    changeRoute(e: any) {
+      if (e.target.value == '9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4') {
+        this.$router.push("/clones");
+      } else if (e.target.value == 'GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs') {
+        this.$router.push("/uniques");
+      } else if (e.target.value == '3owWkikZXpWGdmhQf3xhaYf8GMPRr2b9EjSmXQFZ2Vp4') {
+        this.$router.push("/chimps");
+      };
+    }
+  },
+  computed: {
+    colRewards() {
+      if (this.$route.path == "/chimps") {
+        return "Earning 800 OFF$PRING/Day"
+      } else if (this.$route.path == "/clones") {
+        return "Earning 1200 OFF$PRING/Day"
+      } else if (this.$route.path == "/uniques") {
+        return "Earning 2000 OFF$PRING/Day"
+      }
+    },
   },
 });
 </script>

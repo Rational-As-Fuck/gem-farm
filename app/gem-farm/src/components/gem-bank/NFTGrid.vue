@@ -10,6 +10,7 @@
         v-for="nft in nfts"
         :key="nft"
         :nft="nft"
+        :title="title"
         @selected="handleSelected"
       />
     </div>
