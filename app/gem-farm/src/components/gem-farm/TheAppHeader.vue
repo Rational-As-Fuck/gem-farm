@@ -13,7 +13,7 @@
         </a>
       </div>
       <div class="ml-auto flex items-center h-full">
-        <nav class="main-routes">
+        <!-- <nav class="main-routes">
           <router-link class="text-sm md:text-base" to="/clones"
             >Overlord Clones</router-link
           >
@@ -23,7 +23,7 @@
           <router-link class="text-sm md:text-base" to="/chimps"
             >Chimps</router-link
           >
-        </nav>
+        </nav> -->
       </div>
       <div class="ml-auto items-center h-full hidden sm:flex">
         <a href="https://imsogame.com/" target="_blank">

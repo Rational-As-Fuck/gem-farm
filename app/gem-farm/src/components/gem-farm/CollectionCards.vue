@@ -2,23 +2,23 @@
 <div class="hello">
     <div class="flex flex-wrap justify-center align-center pt-2">
     <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4 pt-7"
     >
         <div class="plain-card no-repeat bg-cover flex-none w-56 h-96">
         <div class="container mx-auto">
             <div class="flex flex-wrap justify-center align-center">
-            <router-link to="/clones">
+            <!-- <router-link to="/clones"> -->
                 <img
                 class="object-contain border-double border-4 border-gray-600 rounded-lg"
                 alt="Arweave Image"
                 src="@/assets/clone_r2.jpg"
                 />
-            </router-link>
+            <!-- </router-link> -->
             </div>
             <div class="flex flex-wrap justify-center align-center pt-2">
             <div class="flex items-center h-full">
                 <nav class="landing-routes">
-                <router-link to="/clones">Meta Overlord Clones</router-link>
+                <!-- <router-link to="/clones">Meta Overlord Clones</router-link> -->
                 </nav>
             </div>
             <div>
@@ -34,18 +34,18 @@
         <div class="plain-card no-repeat bg-cover flex-none w-56 h-96">
         <div class="container mx-auto">
             <div class="flex flex-wrap justify-center align-center">
-            <router-link to="/uniques">
+            <!-- <router-link to="/uniques"> -->
                 <img
                 class="object-contain border-double border-4 border-gray-600 rounded-lg"
                 alt="Arweave Image"
                 src="@/assets/elon_r2.jpeg"
                 />
-            </router-link>
+            <!-- </router-link> -->
             </div>
             <div class="flex flex-wrap justify-center align-center pt-2">
             <div class="flex items-center h-full">
                 <nav class="flex landing-routes">
-                <router-link to="/uniques">Unique Meta Overlords</router-link>
+                <!-- <router-link to="/uniques">Unique Meta Overlords</router-link> -->
                 </nav>
             </div>
             <div>
@@ -61,18 +61,18 @@
         <div class="plain-card no-repeat bg-cover flex-none w-56 h-96">
         <div class="container mx-auto">
             <div class="flex flex-wrap justify-center align-center">
-            <router-link to="/chimps">
+            <!-- <router-link to="/chimps"> -->
                 <img
                 class="object-contain border-double border-4 border-gray-600 rounded-lg"
                 alt="Arweave Image"
                 src="@/assets/metachimp_r2.jpg"
                 />
-            </router-link>
+            <!-- </router-link> -->
             </div>
             <div class="flex flex-wrap justify-center align-center pt-2">
             <div class="flex items-center h-full">
                 <nav class="landing-routes">
-                <router-link to="/chimps">Meta Chimp Champions</router-link>
+                <!-- <router-link to="/chimps">Meta Chimp Champions</router-link> -->
                 </nav>
             </div>
             <div>
