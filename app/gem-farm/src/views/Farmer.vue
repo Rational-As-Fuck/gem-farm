@@ -15,11 +15,18 @@
         <input id="farm" class="nes-input" v-model="farm" />
       </div>
     </div> -->
+    <div class="max-w-3xl flex flex-nowrap pl-5 pr-5 m-auto pt-2">
+      <div class="flex-none w-full h-2 mt-6 mb-2 bg-imso-bg-gray rounded-md">
+        <div class="bg-imso-bg-blue h-2 rounded-md" style="width: {{ option:text }}"></div>
+      </div>
+    </div>
+    <div class="flex flex-wrap justify-center align-center pb-5">
+      <p class="text-sm text-imso-blue">Total Staked 275/300</p>
+    </div>
     <div v-if="farm">
       <div>
         <p class="colheading capitalize">{{ $route.params.col }}</p>
       </div>
-      <TheStakeMeter />
     </div>
     <div class="m-auto">
       <p class="text-xs md:text-sm">Please choose the farm you would like to manage</p>
@@ -114,7 +121,6 @@ import useCluster from '@/composables/cluster';
 import { initGemFarm } from '@/common/gem-farm';
 import { PublicKey } from '@solana/web3.js';
 import ConfigPane from '@/components/ConfigPane.vue';
-import TheStakeMeter from '@/components/gem-farm/TheStakeMeter.vue';
 import FarmerDisplay from '@/components/gem-farm/FarmerDisplay.vue';
 import CollectionCards from '@/components/gem-farm/CollectionCards.vue';
 import Vault from '@/components/gem-bank/Vault.vue';
@@ -127,7 +133,7 @@ export default defineComponent({
       isHidden: true,
     };
   },
-  components: { Vault, FarmerDisplay, ConfigPane, TheStakeMeter, CollectionCards },
+  components: { Vault, FarmerDisplay, ConfigPane, CollectionCards },
   setup() {
     const { wallet, getWallet } = useWallet();
     const { cluster, getConnection } = useCluster();
