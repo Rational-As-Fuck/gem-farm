@@ -40,7 +40,7 @@
             src="@/assets/discord.svg"
           />
         </a>
-        <a href="https://twitter.com/ImSoNFTart" target="_blank">
+        <a href="https://twitter.com/IMSO_Game" target="_blank">
           <img
             class="h-4 lg:h-6 m-1 md:m-2"
             alt="Twitter logo"

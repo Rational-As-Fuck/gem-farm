@@ -13,6 +13,7 @@
                 alt="Arweave Image"
                 src="@/assets/clone_r2.jpg"
                 />
+                Meta Overlord Clones
             <!-- </router-link> -->
             </div>
             <div class="flex flex-wrap justify-center align-center pt-2">
@@ -40,6 +41,7 @@
                 alt="Arweave Image"
                 src="@/assets/elon_r2.jpeg"
                 />
+                Unique Meta Overlords
             <!-- </router-link> -->
             </div>
             <div class="flex flex-wrap justify-center align-center pt-2">
@@ -67,6 +69,7 @@
                 alt="Arweave Image"
                 src="@/assets/metachimp_r2.jpg"
                 />
+                Meta Chimp Champions
             <!-- </router-link> -->
             </div>
             <div class="flex flex-wrap justify-center align-center pt-2">
