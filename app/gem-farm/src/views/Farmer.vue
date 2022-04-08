@@ -220,6 +220,7 @@ export default defineComponent({
     };
     // --------------------------------------- staking
     const beginStaking = async () => {
+      alert('Please wait until the entire process is complete - could take 10 or more seconds');
       const result = await gf.stakeWallet(new PublicKey(farm.value!));
       console.log(result);
       wait(3000);
@@ -230,12 +231,11 @@ export default defineComponent({
       alert('Please wait until the entire process is complete - could take 10 or more seconds');
       const result = await gf.unstakeWallet(new PublicKey(farm.value!));
       console.log(result.txSig);
-      debugger;
+      alert('You will need to approve one more transaction to get out of "cooldown" which is unnecessary for this farm.');
       wait(3000);
       await fetchFarmer();
       //one more time to avoid cooldown
       const result2 = await gf.unstakeWallet(new PublicKey(farm.value!));
-      debugger;
       wait(3000);
       await fetchFarmer();
       selectedNFTs.value = [];

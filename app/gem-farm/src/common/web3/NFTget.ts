@@ -18,11 +18,14 @@ async function getTokensByOwner(owner: PublicKey, conn: Connection) {
   const tokens = await conn.getParsedTokenAccountsByOwner(owner, {
     programId: TOKEN_PROGRAM_ID,
   });
+  console.log(tokens);
+
 
   // initial filter - only tokens with 0 decimals & of which 1 is present in the wallet
   return tokens.value
     .filter((t) => {
       const amount = t.account.data.parsed.info.tokenAmount;
+            
       return amount.decimals === 0 && amount.uiAmount === 1;
     })
     .map((t) => {
@@ -59,8 +62,18 @@ export async function getNFTMetadataForMany(
   tokens.forEach((t) => promises.push(getNFTMetadata(t.mint, conn, t.pubkey)));
   const nfts = (await Promise.all(promises)).filter((n) => !!n);
   console.log(`found ${nfts.length} metadatas`);
+  const returnTheseNFTs = [];
+  for (let i = 0; i < nfts.length; i++) {
+    const ocm:any = nfts[i]?.onchainMetadata;
+    const updAuth = ocm.updateAuthority;
+    const farm = window.location.pathname;
+    if ((updAuth == "7tYpQaFUwueJaSeRmKX44HV8Ymrq4jvATCty6BzCt8CA" && (farm == "/clones" || farm == "/uniques")) || 
+        (updAuth == "CHMPmJUyeDufN5qD9vsu4TRNPnydzuWss2hgZ2QKQ7AJ" && farm == "/chimps")) {
+      returnTheseNFTs.push(nfts[i]);
+    }
+  };
 
-  return nfts as INFT[];
+  return returnTheseNFTs as INFT[];
 }
 
 export async function getNFTsByOwner(
