@@ -220,6 +220,7 @@ export default defineComponent({
     };
     // --------------------------------------- staking
     const beginStaking = async () => {
+      alert("Please wait until the entire process is complete - could take 10 or more seconds');
       const result = await gf.stakeWallet(new PublicKey(farm.value!));
       console.log(result);
       wait(3000);
