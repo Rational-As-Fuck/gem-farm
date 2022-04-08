@@ -120,6 +120,7 @@ import CollectionCards from '@/components/gem-farm/CollectionCards.vue';
 import Vault from '@/components/gem-bank/Vault.vue';
 import { INFT } from '@/common/web3/NFTget';
 import { findFarmerPDA, stringifyPKsAndBNs } from '@gemworks/gem-farm-ts';
+
 export default defineComponent({
   data() {
     return {
@@ -130,6 +131,7 @@ export default defineComponent({
   setup() {
     const { wallet, getWallet } = useWallet();
     const { cluster, getConnection } = useCluster();
+
     let gf: any;
     watch([wallet, cluster], async () => {
       await freshStart();
@@ -138,6 +140,15 @@ export default defineComponent({
     onMounted(async () => {
       await freshStart();
     });
+    const wait = (ms: number) => {
+      console.log(`waiting for ${ms/1000} seconds`);
+      let start = new Date().getTime();
+      let end = start;
+      while (end < start + ms) {
+        end = new Date().getTime();
+      }
+      console.log(`${ms/1000} second wait time over`);
+    }
     // --------------------------------------- farmer details
     const farm = ref<string>('');
     //const farm = farmid; // Overlord Clones
@@ -164,7 +175,7 @@ export default defineComponent({
         .sub(farmerAcc.value.rewardB.paidOutReward)
         .toString();
     };
-    const fetchFarn = async () => {
+    const fetchFarm = async () => {
       farmAcc.value = await gf.fetchFarmAcc(new PublicKey(farm.value!));
       console.log(
         `farm found at ${farm.value}:`,
@@ -196,7 +207,7 @@ export default defineComponent({
         availableA.value = undefined;
         availableB.value = undefined;
         try {
-          await fetchFarn();
+          await fetchFarm();
           await fetchFarmer();
         } catch (e) {
           console.log(`farm with PK ${farm.value} not found :(`);
@@ -209,12 +220,23 @@ export default defineComponent({
     };
     // --------------------------------------- staking
     const beginStaking = async () => {
-      await gf.stakeWallet(new PublicKey(farm.value!));
+      const result = await gf.stakeWallet(new PublicKey(farm.value!));
+      console.log(result);
+      wait(3000);
       await fetchFarmer();
       selectedNFTs.value = [];
     };
     const endStaking = async () => {
-      await gf.unstakeWallet(new PublicKey(farm.value!));
+      alert('Please wait until the entire process is complete - could take 10 or more seconds');
+      const result = await gf.unstakeWallet(new PublicKey(farm.value!));
+      console.log(result.txSig);
+      debugger;
+      wait(3000);
+      await fetchFarmer();
+      //one more time to avoid cooldown
+      const result2 = await gf.unstakeWallet(new PublicKey(farm.value!));
+      debugger;
+      wait(3000);
       await fetchFarmer();
       selectedNFTs.value = [];
     };

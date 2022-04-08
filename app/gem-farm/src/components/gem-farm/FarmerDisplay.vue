@@ -3,20 +3,22 @@
     <p class="title">Your Staking Account</p>
     <div class="mb-2">
       state:
-      <p class="inline-block bg-yellow-200">
+      <p class="inline-block">
         {{ parseFarmerState(farmerAcc) }}
       </p>
     </div>
+    <vue-simple-spinner size="88" line-size="12"></vue-simple-spinner>
     <div class="mb-2 text-xs md:text-base break-words">Your identity: {{ farmerAcc.identity.toBase58() }}</div>
     <div class="mb-2 text-xs md:text-base break-words">Associated vault: {{ farmerAcc.vault.toBase58() }}</div>
     <div class="mb-2">Gems staked: {{ farmerAcc.gemsStaked }}</div>
     <div class="mb-2">
       Min staking ends: {{ parseDate(farmerAcc.minStakingEndsTs) }}
     </div>
+    <!--
     <div class="mb-5">
       Cooldown ends: {{ parseDate(farmerAcc.cooldownEndsTs) }}
     </div>
-
+    -->
     <div class="flex mb-5">
       <div class="flex-1 mr-0 md:mr-5">
         <FarmerRewardDisplay
@@ -49,6 +51,7 @@ import useCluster from '@/composables/cluster';
 import { initGemFarm } from '@/common/gem-farm';
 import { PublicKey } from '@solana/web3.js';
 import { parseDate } from '@/common/util';
+
 
 export default defineComponent({
   components: { FarmerRewardDisplay },
