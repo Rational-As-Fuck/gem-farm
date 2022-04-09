@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mb-2">Base rate: {{ schedule.baseRate / 1000000 }} tokens/gem/day</div>
+    <div class="mb-2">Base rate: {{ Math.round((schedule.baseRate / 1000000) * 86400) }} tokens/gem/day</div>
     <div class="mb-2" v-if="schedule.tier1">
       T1 reward rate:
       {{ schedule.tier1.rewardRate }} tokens/gem/s
@@ -34,6 +34,9 @@
       {{ schedule.denominator }}
     </div>
     -->
+    <div class="mb-2">
+      Please click Refresh account if you would like to update these numbers (for a small transaction fee less than 0.00001 SOL)
+    </div>
   </div>
 </template>
 

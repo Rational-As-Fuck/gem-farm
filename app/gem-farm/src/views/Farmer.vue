@@ -95,6 +95,7 @@
         </button>
       </Vault>
     </div>
+
     <div v-else class="flex flex-wrap justify-center align-center pt-12">
       <div v-if="farm" class="flex">
         <div class="plain-card no-repeat bg-cover flex-none">
@@ -126,6 +127,7 @@ import CollectionCards from '@/components/gem-farm/CollectionCards.vue';
 import Vault from '@/components/gem-bank/Vault.vue';
 import { INFT } from '@/common/web3/NFTget';
 import { findFarmerPDA, stringifyPKsAndBNs } from '@gemworks/gem-farm-ts';
+import { createToaster } from '@meforma/vue-toaster';
 
 export default defineComponent({
   data() {
@@ -137,6 +139,7 @@ export default defineComponent({
   setup() {
     const { wallet, getWallet } = useWallet();
     const { cluster, getConnection } = useCluster();
+    const toaster = createToaster({ "type":"success", "position":"top", "duration":"false" });
 
     let gf: any;
     watch([wallet, cluster], async () => {
@@ -226,32 +229,36 @@ export default defineComponent({
     };
     // --------------------------------------- staking
     const beginStaking = async () => {
-      alert('Please wait until the entire process is complete - could take 10 or more seconds');
+      toaster.show(`Please wait until the entire process is complete.  This message will expire when your NFTs are staked.`, {"type": "default", "position": "top", "duration": 30000, "dismissable": true, "pauseOnHover": true});
       const result = await gf.stakeWallet(new PublicKey(farm.value!));
-      console.log(result);
-      wait(3000);
+      wait(2000);
+      toaster.clear();
+      toaster.show(`You are now staked`, {"type": "default", "position": "top", "duration": 3000, "dismissable": true, "pauseOnHover": true});
       await fetchFarmer();
       selectedNFTs.value = [];
     };
     const endStaking = async () => {
-      alert('Please wait until the entire process is complete - could take 10 or more seconds');
+      toaster.show(`Please wait until the entire process is complete.  This message will expire when your NFTs are ready.`, {"type": "default", "position": "top", "duration": 30000, "dismissable": true, "pauseOnHover": true});
       const result = await gf.unstakeWallet(new PublicKey(farm.value!));
-      console.log(result.txSig);
-      alert('You will need to approve one more transaction to get out of "cooldown" which is unnecessary for this farm.');
+      toaster.clear();
+      toaster.show(`You will need to approve one more transaction to get out of "cooldown" which is unnecessary for this farm.  This message will expire when you are unstaked.`, {"type": "default", "position": "top", "duration": 30000, "dismissable": true, "pauseOnHover": true});
       wait(3000);
       await fetchFarmer();
       //one more time to avoid cooldown
       const result2 = await gf.unstakeWallet(new PublicKey(farm.value!));
+      toaster.clear();
       wait(3000);
       await fetchFarmer();
       selectedNFTs.value = [];
     };
     const claim = async () => {
-      await gf.claimWallet(
+      console.log(`About to claim.`);
+      const result = await gf.claimWallet(
         new PublicKey(farm.value!),
         new PublicKey(farmAcc.value.rewardA.rewardMint!),
         new PublicKey(farmAcc.value.rewardB.rewardMint!)
       );
+      console.log(`Result from Claim is:`,result);
       await fetchFarmer();
     };
     const handleRefreshFarmer = async () => {
@@ -325,7 +332,7 @@ export default defineComponent({
       } else if (e.target.value == '3owWkikZXpWGdmhQf3xhaYf8GMPRr2b9EjSmXQFZ2Vp4') {
         this.$router.push("/chimps");
       };
-    }
+    },
   },
 });
 </script>

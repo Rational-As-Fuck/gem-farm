@@ -97,7 +97,7 @@ export async function getNFTMetadataForMany(
   const nfts = (await Promise.all(promises)).filter((n) => !!n);
   console.log(`found ${nfts.length} metadatas`);
   const returnTheseNFTs = [];
-  debugger;
+
   for (let i = 0; i < nfts.length; i++) {
     const ocm:any = nfts[i]?.onchainMetadata;
     const updAuth = ocm.updateAuthority;

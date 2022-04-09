@@ -13,6 +13,8 @@ import {
   GEM_BANK_PROG_ID,
 } from '@gemworks/gem-farm-ts';
 import { programs } from '@metaplex/js';
+import { createToaster } from '@meforma/vue-toaster';
+
 
 export async function initGemFarm(
   conn: Connection,
@@ -21,12 +23,23 @@ export async function initGemFarm(
   const walletToUse = wallet ?? createFakeWallet();
   const farmIdl = await (await fetch('gem_farm.json')).json();
   const bankIdl = await (await fetch('gem_bank.json')).json();
+  
   return new GemFarm(conn, walletToUse as any, farmIdl, bankIdl);
 }
 
 export class GemFarm extends GemFarmClient {
   constructor(conn: Connection, wallet: any, farmIdl: Idl, bankIdl: Idl) {
     super(conn, wallet, farmIdl, GEM_FARM_PROG_ID, bankIdl, GEM_BANK_PROG_ID);
+  }
+
+  wait = (ms: number) => {
+    console.log(`waiting for ${ms/1000} seconds`);
+    let start = new Date().getTime();
+    let end = start;
+    while (end < start + ms) {
+      end = new Date().getTime();
+    }
+    console.log(`${ms/1000} second wait time over`); 
   }
 
   async initFarmWallet(
@@ -264,14 +277,18 @@ export class GemFarm extends GemFarmClient {
     rewardAMint: PublicKey,
     rewardBMint: PublicKey
   ) {
+    const toaster = createToaster({"type": "success", "position": "top", "duration": "false" });
+    toaster.show(`Claiming your $SPRING`, {"type": "default", "position": "top", "duration": 30000});
     const result = await this.claim(
       farm,
       this.wallet.publicKey,
       rewardAMint,
       rewardBMint
     );
-
-    console.log('claimed rewards for farmer', this.wallet.publicKey.toBase58());
+    toaster.clear();
+    toaster.show(`$SPRING has been claimed`, {"type": "default", "position": "top", "duration": 2000});
+    // console.log(`result await this.claim: `, result);
+    // console.log('claimed rewards for farmer', this.wallet.publicKey.toBase58());
 
     return result;
   }
