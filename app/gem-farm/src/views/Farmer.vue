@@ -165,8 +165,6 @@ export default defineComponent({
 
     // --------------------------------------- farmer details
     const farm = ref<string>('');
-    //const farm = farmid; // Overlord Clones
-    //const farm = ref<string>('HJVe9iwgA4NEZT2MpHPCkPYpFXxJZXFSzNi3GTwabRx9'); // Overlord Clones
     const farmAcc = ref<any>();
     const farmerIdentity = ref<string>();
     const farmerAcc = ref<any>();
@@ -231,7 +229,6 @@ export default defineComponent({
     const initFarmer = async () => {
       await gf.initFarmerWallet(new PublicKey(farm.value!));
       await fetchFarmer();
-      debugger;
     };
     // --------------------------------------- staking
     const beginStaking = async () => {
@@ -247,7 +244,6 @@ export default defineComponent({
       toaster.show(`Please wait until the entire process is complete.  This message will expire when your NFTs are ready.`, {"type": "default", "position": "top", "duration": 30000, "dismissable": true, "pauseOnHover": true});
       const result = await gf.unstakeWallet(new PublicKey(farm.value!));
       wait(10000);
-      console.log(result);
       toaster.clear();
       toaster.show(`You will need to approve one more transaction to get out of "cooldown" which is unnecessary for this farm.  This message will expire when you are unstaked.`, {"type": "default", "position": "top", "duration": 30000, "dismissable": true, "pauseOnHover": true});
       wait(3000);
@@ -265,8 +261,6 @@ export default defineComponent({
         new PublicKey(farmAcc.value.rewardA.rewardMint!),
         new PublicKey(farmAcc.value.rewardB.rewardMint!)
       );
-      wait(10000);
-      toaster.clear();
       await fetchFarmer();
     };
     const handleRefreshFarmer = async () => {
@@ -300,7 +294,6 @@ export default defineComponent({
             //todo currently simply taking the 1st creator
             (nft.onchainMetadata as any).data.creators[0].address
           );
-          console.log('creator is', creator.toBase58());
           addSingleGem(nft.mint, nft.pubkey!, creator);
         })
       );
@@ -329,9 +322,7 @@ export default defineComponent({
       handleNewSelectedNFT,
       addGems,
       totalAvailable:{
-        "/clones": 470,
-        "/uniques": 35,
-        "/chimps": 3334
+        "/moondusa": 4444
       },
     };
   },

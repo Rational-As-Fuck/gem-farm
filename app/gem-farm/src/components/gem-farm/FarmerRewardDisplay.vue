@@ -1,8 +1,8 @@
 <template>
   <div class="nes-container">
     <p class="title">{{ title }}</p>
-    <div class="mb-2">You've earned about {{ Math.round(( reward.accruedReward / 1000000) * 100) / 100 }} $SPRING all time with this farm.</div>
-    <div class="mb-2">You've claimed about {{ Math.round(( reward.paidOutReward / 1000000) * 100) / 100 }} $SPRING total.</div>
+    <div class="mb-2">You've earned about {{ Math.round(( reward.accruedReward / 1000000) * 100) / 100 }} $MOONEY all time with this farm.</div>
+    <div class="mb-2">You've claimed about {{ Math.round(( reward.paidOutReward / 1000000) * 100) / 100 }} $MOONEY total.</div>
     <div v-if="parseRewardType(farmReward) === 'variable'">
       <div class="mb-2 w-full bg-black text-white">Variable reward:</div>
       <div class="mb-2">

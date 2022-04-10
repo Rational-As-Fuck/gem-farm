@@ -278,15 +278,18 @@ export class GemFarm extends GemFarmClient {
     rewardBMint: PublicKey
   ) {
     const toaster = createToaster({"type": "success", "position": "top", "duration": "false" });
-    toaster.show(`Claiming your $SPRING`, {"type": "default", "position": "top", "duration": 30000});
+    toaster.show(`Claiming your $MOONEY`, {"type": "default", "position": "top", "duration": 30000});
     const result = await this.claim(
       farm,
       this.wallet.publicKey,
       rewardAMint,
       rewardBMint
     );
+    this.wait(5000);
+    console.log(`The transaction address is https://solscan.io/tx/${result.txSig}`);
     toaster.clear();
-    toaster.show(`$SPRING has been claimed`, {"type": "default", "position": "top", "duration": 2000});
+    this.wait(5000);
+    toaster.show(`$MOONEY has been claimed`, {"type": "default", "position": "top", "duration": 2000});
     // console.log(`result await this.claim: `, result);
     // console.log('claimed rewards for farmer', this.wallet.publicKey.toBase58());
 

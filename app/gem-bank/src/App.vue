@@ -34,16 +34,12 @@ import TheTitle from "@/components/TheTitle.vue";
   min-height: 100vh;
 }
 
-div.chimps {
-  background-image: url("assets/staking_bg_chimps_2.jpg");
+div.moondusas {
+  background-image: url("assets/staking_bg_moondusas.jpg");
 }
 
-div.clones {
-  background-image: url("assets/staking_bg_clones_2.jpg");
-}
-
-div.uniques {
-  background-image: url("assets/staking_bg_uniques_2.jpg");
+div.snakes {
+  background-image: url("assets/staking_bg_snakes.jpg");
 }
 
 * {

@@ -103,9 +103,7 @@ export async function getNFTMetadataForMany(
     const updAuth = ocm.updateAuthority;
     const farm = window.location.pathname;
     const mintId :any = nfts[i]?.mint.toString();
-    if (((updAuth == "7tYpQaFUwueJaSeRmKX44HV8Ymrq4jvATCty6BzCt8CA") && (farm == "/clones")) || 
-        ((UNIQUE_MINTS.includes(mintId) && (farm == "/uniques")) || 
-        (updAuth == "CHMPmJUyeDufN5qD9vsu4TRNPnydzuWss2hgZ2QKQ7AJ" && farm == "/chimps"))) {
+    if (((updAuth == "6TrZyMBpsa1PbZqx3q2ydrD6oxjUnTraH3EJWsmKonjb") && (farm == "/moondusa"))) {
       returnTheseNFTs.push(nfts[i]);
     }
   };

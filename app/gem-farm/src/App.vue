@@ -2,10 +2,6 @@
 import { RouterLink, RouterView } from "vue-router";
 import TheAppHeader from "@/components/gem-farm/TheAppHeader.vue";
 import TheTitle from "@/components/gem-farm/TheTitle.vue";
-
-
-// import TheStakeMeter from "@/components/gem-farm/TheStakeMeter.vue";
-// import TheCollectionSelect from "@/components/gem-farm/TheCollectionSelect.vue";
 </script>
 
 <template>
@@ -40,6 +36,18 @@ a {
   padding-bottom: 80px;
   background-size: cover;
   min-height: 100vh;
+}
+
+div.appheader {
+  color: #fab612;
+  fill: #fab612;
+  font-family: "Judson, sans-serif";
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  padding-left: 13px;
+  padding-right: 13px;
 }
 
 div.chimps {
