@@ -15,7 +15,9 @@
       </div>
     </div>
     <div v-else>
+      <!-- 
       <div class="mb-2 w-full bg-black text-white">Fixed reward:</div>
+      -->
       <div class="mb-2">
         You began staking {{ parseDate(reward.fixedRate.beginStakingTs) }}
       </div>

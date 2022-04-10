@@ -84,12 +84,14 @@ import { getListDiffBasedOnMints, removeManyFromList } from '@/common/util';
 import { BN } from '@project-serum/anchor';
 import TheWhitelist from '@/components/TheWhitelist.vue';
 import { findVaultPDA } from '@gemworks/gem-farm-ts';
+import {createToaster} from '@meforma/vue-toaster';
 
 export default defineComponent({
   components: { TheWhitelist, ArrowButton, NFTGrid, ConfigPane },
   setup() {
     const { wallet, getWallet } = useWallet();
     const { cluster, getConnection } = useCluster();
+    const toaster = createToaster({ "type":"success", "position":"top", "duration":"false" });
 
     let gb: any;
     watch([wallet, cluster], async () => {
@@ -101,6 +103,13 @@ export default defineComponent({
         await startFresh();
       }
     });
+    const wait = (ms: number) => {
+      let start = new Date().getTime();
+      let end = start;
+      while (end < start + ms) {
+        end = new Date().getTime();
+      }
+    }
 
     // --------------------------------------- manage vault
     const bank = ref<string>();
@@ -159,6 +168,7 @@ export default defineComponent({
       creator: PublicKey,
       source: PublicKey
     ) => {
+      toaster.show(`Please wait until the entire process is complete.  This message will expire when your NFT is moved into the vault`, {"type": "default", "position": "top", "duration": 30000, "dismissable": false, "pauseOnHover": true});
       const { txSig } = await gb.depositGemWallet(
         new PublicKey(bank.value!),
         new PublicKey(vault.value!),
@@ -167,6 +177,9 @@ export default defineComponent({
         source,
         creator
       );
+      wait(10000);
+      toaster.clear();
+      toaster.show(`Your NFT is now moved.`, {"type": "default", "position": "top", "duration": 10000, "dismissable": true, "pauseOnHover": true});
       console.log('deposit done', txSig);
     };
 

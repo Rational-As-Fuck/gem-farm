@@ -7,13 +7,14 @@
         {{ parseFarmerState(farmerAcc) }}
       </p>
     </div>
-    <vue-simple-spinner size="88" line-size="12"></vue-simple-spinner>
-    <div class="mb-2 text-xs md:text-base break-words">Your identity: {{ farmerAcc.identity.toBase58() }}</div>
-    <div class="mb-2 text-xs md:text-base break-words">Associated vault: {{ farmerAcc.vault.toBase58() }}</div>
+    <!-- <div class="mb-2 text-xs md:text-base break-words">Your identity: {{ farmerAcc.identity.toBase58() }}</div> -->
+    <!-- <div class="mb-2 text-xs md:text-base break-words">Associated vault: {{ farmerAcc.vault.toBase58() }}</div> -->
     <div class="mb-2">Gems staked: {{ farmerAcc.gemsStaked }}</div>
+    <!--
     <div class="mb-2">
       Min staking ends: {{ parseDate(farmerAcc.minStakingEndsTs) }}
     </div>
+    -->
     <!--
     <div class="mb-5">
       Cooldown ends: {{ parseDate(farmerAcc.cooldownEndsTs) }}
@@ -37,6 +38,7 @@
         />
       </div> -->
     </div>
+
     <button class="stake-button-trigger stake-btn is-primary mb-5 mx-auto" @click="refreshFarmer">
       Refresh account
     </button>

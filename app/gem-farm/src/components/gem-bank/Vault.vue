@@ -71,6 +71,7 @@ import { initGemBank } from '@/common/gem-bank';
 import { PublicKey } from '@solana/web3.js';
 import { getListDiffBasedOnMints, removeManyFromList } from '@/common/util';
 import { BN } from '@project-serum/anchor';
+import { createToaster } from '@meforma/vue-toaster';
 
 export default defineComponent({
   components: { ArrowButton, NFTGrid },
@@ -81,6 +82,7 @@ export default defineComponent({
   setup(props, ctx) {
     const { wallet, getWallet } = useWallet();
     const { cluster, getConnection } = useCluster();
+    const toaster = createToaster({ "type":"success", "position":"top", "duration":"false" });
 
     // --------------------------------------- state
 
@@ -96,6 +98,13 @@ export default defineComponent({
     //moved over onchain
     const toWalletNFTs = ref<INFT[]>([]);
     const toVaultNFTs = ref<INFT[]>([]);
+    const wait = (ms: number) => {
+      let start = new Date().getTime();
+      let end = start;
+      while (end < start + ms) {
+        end = new Date().getTime();
+      }
+    }
 
     // --------------------------------------- populate initial nfts
 
@@ -205,7 +214,6 @@ export default defineComponent({
     //todo jam into single tx
     const moveNFTsOnChain = async () => {
       for (const nft of toVaultNFTs.value) {
-        console.log(nft);
         const creator = new PublicKey(
           //todo currently simply taking the 1st creator
           (nft.onchainMetadata as any).data.creators[0].address
@@ -259,6 +267,7 @@ export default defineComponent({
       creator: PublicKey,
       source: PublicKey
     ) => {
+      toaster.show(`Your NFT is being moved into the vault`,{"type": "default", "position":"top", "duration": 90000, "dismissable": false, "pauseOnHover": true});
       const { txSig } = await gb.depositGemWallet(
         bank.value,
         vault.value,
@@ -267,17 +276,24 @@ export default defineComponent({
         source,
         creator
       );
-      console.log('deposit done', txSig);
+      wait(10000);
+      toaster.clear();
+      toaster.show(`Your NFT is now in your vault`,{"type": "default", "position":"top", "duration": 2000, "dismissable": false, "pauseOnHover": true});
+
     };
 
     const withdrawGem = async (mint: PublicKey) => {
+      toaster.show(`Your NFT is being moved back into your wallet.`,{"type": "default", "position":"top", "duration": 90000, "dismissable": false, "pauseOnHover": true});
       const { txSig } = await gb.withdrawGemWallet(
         bank.value,
         vault.value,
         new BN(1),
         mint
       );
-      console.log('withdrawal done', txSig);
+      wait(10000);
+      toaster.clear();
+      toaster.show(`Your NFT is now in back in your wallet`,{"type": "default", "position":"top", "duration": 2000, "dismissable": false, "pauseOnHover": true});
+
     };
 
     // --------------------------------------- return
