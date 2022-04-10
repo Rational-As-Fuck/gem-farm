@@ -7,8 +7,8 @@
         <a href="/farmer">
           <img
             class="h-8"
-            alt="IMSO Staking Hub logo"
-            src="@/assets/imso_staking_hub_header_logo.png"
+            alt="Moondusa Staking Hub logo"
+            src="@/assets/Moondusa_StakHub_logo.png"
           />
         </a>
       </div>

@@ -12,7 +12,7 @@
   <div class="flex flex-wrap justify-center align-center pb-12 pt-2">
     <div class="flex-initial w-48 sm:w-72 md:w-72 lg:w-96 h-auto pr-7">
       <a href="/farmer">
-        <img alt="IMSO logo" src="@/assets/IMSO_StakHub_logo.png" />
+        <img alt="IMSO logo" src="@/assets/Moondusa_StakHub_logo.png" />
       </a>
     </div>
     <div
@@ -23,16 +23,11 @@
         class="text-xs sm:text-xs md:text-xs lg:text-sm text-white text-left pb-3"
       >
         <p class="mb-2.5">
-          Stake your IMSO NFTs for OFFSPRING Token.<br />
-          You may claim your $SPRING at any time.
+          Stake your Moondusa NFTs for MOONEY Token.<br />
+          You may claim your $MONY at any time.
         </p>
         <p>
-          Unique Overlord NFT staking rewards: 2000 $SPRING / day<br />
-          Clone NFTs staking rewards: 1200 $SPRING / day <br />
-          Chimp NFT staking rewards: <br />
-          <span class="line-through">400 $SPRING / day</span>
-          <span class="text-ims">   800 $SPRING / day*</span>
-          <p class="text-imso-yellow relative md:absolute bottom-0 flex flex-row whitespace-nowrap">*until May 9th 2022</p>
+          Moondusa NFT staking rewards: 69 $MONY / day<br />
         </p>
       </div>
       <!-- <div

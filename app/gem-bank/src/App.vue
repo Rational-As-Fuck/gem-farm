@@ -17,7 +17,7 @@ import TheTitle from "@/components/TheTitle.vue";
 
 <style>
 #app {
-  background-image: url("/images/bg.jpg");
+  background-image: url("/images/Moondusa_bg.jpeg");
   background-size: cover;
   min-height: 100vh;
   font-family: "Exo 2", sans-serif;

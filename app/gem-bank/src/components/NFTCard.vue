@@ -18,7 +18,7 @@
           <div class="flex justify-center align-center pl-5 pt-2">
             <img
               class="h-8 w-8 pt-2"
-              alt="IMSO logo"
+              alt="Moondusa logo"
               src="@/assets/token.png"
             />
             <span class="text-left pl-2 text-yellow-300 text-sm"

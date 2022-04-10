@@ -15,7 +15,7 @@
                 <img
                   class="object-contain border-double border-4 border-gray-600 rounded-lg"
                   alt="Arweave Image"
-                  src="@/assets/clone_r2.jpg"
+                  src="@/assets/small_r2.jpg"
                 />
               </router-link>
             </div>

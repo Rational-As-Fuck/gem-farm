@@ -1,8 +1,8 @@
 <template>
   <div v-if="!wallet" class="text-sm md:text-base text-center">
-    <p class="font-bold text-lg">Welcome to the IMSO NFT Staking Hub</p>
+    <p class="font-bold text-lg">Welcome to the Moondusa Staking Hub</p>
     <p>Please click on Connect Wallet above to connect your Solana wallet.</p>
-    <p>Make sure this wallet is set to the same account that contains your IMSO NFTs.</p>
+    <p>Make sure this wallet is set to the same account that contains your Moondusa NFTs.</p>
     <p>You will also need a small amout of Solana in that wallet for gas to interact with the staking farms</p>
     <CollectionCards />
   </div>
@@ -288,9 +288,7 @@ export default defineComponent({
     };
     return {
       options: [
-        {text: 'Overlord Clones', value: '9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4'},
-        {text: 'Overlord Uniques', value: 'GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs'},
-        {text: 'Meta Chimps', value: '3owWkikZXpWGdmhQf3xhaYf8GMPRr2b9EjSmXQFZ2Vp4'}
+        {text: 'Moondusa', value: 'AW2rHYXPeuBkcC5e41kKSzYGzQaiBW6STHjVaKNkNDad'},
       ],
       wallet,
       farm,
@@ -312,13 +310,9 @@ export default defineComponent({
   },
   methods: {
     changeRoute(e: any) {
-      if (e.target.value == '9PJD3XVpq7fySsQKAMZEb97272U16GCngGqXRuYiktN4') {
-        this.$router.push("/clones");
-      } else if (e.target.value == 'GffFVEQHbuyvMZgZLAWYeqvDcTej8F3PzA4A2kFbqnMs') {
-        this.$router.push("/uniques");
-      } else if (e.target.value == '3owWkikZXpWGdmhQf3xhaYf8GMPRr2b9EjSmXQFZ2Vp4') {
-        this.$router.push("/chimps");
-      };
+      if (e.target.value == 'AW2rHYXPeuBkcC5e41kKSzYGzQaiBW6STHjVaKNkNDad') {
+        this.$router.push("/moondusa");
+      }
     }
   },
 });

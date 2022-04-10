@@ -8,7 +8,7 @@
           <img
             class="h-8"
             alt="IMSO Staking Hub logo"
-            src="@/assets/imso_staking_hub_header_logo.png"
+            src="@/assets/Moondusa_staking_hub_header_logo.png"
           />
         </a>
       </div>
