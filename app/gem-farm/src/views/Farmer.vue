@@ -64,6 +64,7 @@
         :vault="farmerAcc.vault.toBase58()"
         @selected-wallet-nft="handleNewSelectedNFT"
       >
+      <!--
         <button
           v-if="farmerState === 'staked' && selectedNFTs.length > 0"
           class="stake-button-trigger stake-btn is-primary mr-5"
@@ -71,6 +72,7 @@
         >
           Add Gems (resets staking)
         </button>
+      -->
         <button
           v-if="farmerState === 'unstaked'"
           class="stake-button-trigger stake-btn is-success mr-5"
@@ -256,6 +258,7 @@ export default defineComponent({
       selectedNFTs.value = [];
     };
     const claim = async () => {
+      console.log(farmAcc);
       const result = await gf.claimWallet(
         new PublicKey(farm.value!),
         new PublicKey(farmAcc.value.rewardA.rewardMint!),
@@ -362,7 +365,7 @@ export default defineComponent({
     cursor: pointer;
     display: flex;
     align-items: center;
-    font-family: 'Goldman', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'polaris', 'Goldman', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 12px;
     font-weight: 600;
     height: 36px;

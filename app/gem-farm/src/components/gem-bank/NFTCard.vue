@@ -19,7 +19,7 @@
       <div v-if="title == 'Your vault'" class="absolute bottom-6 lg:bottom-10 flex flex-wrap h-max">
         <div>
           <div class="flex pt-2 pr-3 lg:px-2">
-            <img class="invisible lg:visible h-5 w-5" alt="IMSO logo" src="@/assets/token.png" />
+            <img class="invisible lg:visible h-5 w-5" alt="MOONEY logo" src="@/assets/token.png" />
             <span class="text-left pl-0 lg:pl-2 text-yellow-300 text-xs lg:text-sm"
               >{{ colRewards }}</span
             >

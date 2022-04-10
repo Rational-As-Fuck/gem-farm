@@ -365,7 +365,7 @@ export default defineComponent({
     cursor: pointer;
     display: flex;
     align-items: center;
-    font-family: 'Goldman', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'polaris', 'Goldman', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 12px;
     font-weight: 600;
     height: 36px;

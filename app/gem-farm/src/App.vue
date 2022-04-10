@@ -20,7 +20,7 @@ import TheTitle from "@/components/gem-farm/TheTitle.vue";
   background-size: cover;
   min-height: 100vh;
   /* background-repeat: repeat-y; */
-  font-family: "Exo 2", sans-serif;
+  font-family: 'polaris', "Exo 2", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -38,10 +38,15 @@ a {
   min-height: 100vh;
 }
 
+@font-face {
+  font-family: polaris;
+  src: url('~@/assets/fonts/Polaris.otf');
+}
+
 div.appheader {
   color: #fab612;
   fill: #fab612;
-  font-family: "Judson, sans-serif";
+  font-family: "polaris, Judson, sans-serif";
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
@@ -63,14 +68,14 @@ div.uniques {
 }
 
 * {
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'polaris', 'Exo 2', sans-serif;
 }
 input[type='radio']:checked + span {
   @apply text-black;
 }
 
 .colheading {
-  font-family: "Goldman", sans-serif;
+  font-family: 'polaris', "Goldman", sans-serif;
   @apply text-4xl;
 }
 

@@ -20,7 +20,7 @@ import TheTitle from "@/components/TheTitle.vue";
   background-image: url("/images/Moondusa_bg.jpeg");
   background-size: cover;
   min-height: 100vh;
-  font-family: "Exo 2", sans-serif;
+  font-family: "polaris", "Exo 2", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -43,7 +43,7 @@ div.snakes {
 }
 
 * {
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'polaris', 'Exo 2', sans-serif;
 }
 input[type='radio']:checked + span {
   @apply text-black;
