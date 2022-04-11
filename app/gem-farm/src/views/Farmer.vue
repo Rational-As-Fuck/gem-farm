@@ -7,21 +7,6 @@
     <CollectionCards />
   </div>
   <div v-else>
-    <!--farm address-->
-    <!-- <div class="nes-container with-title mb-10">
-      <p class="title">Connect to a Farm</p>
-      <div class="nes-field mb-5">
-        <label for="farm">Farm address:</label>
-        <input id="farm" class="nes-input" v-model="farm" />
-      </div>
-    </div> -->
-    <!--
-    <div class="max-w-3xl flex flex-nowrap pl-5 pr-5 m-auto pt-2">
-      <div class="flex-none w-full h-2 mt-6 mb-2 bg-imso-bg-gray rounded-md">
-        <div class="bg-imso-bg-blue h-2 rounded-md" style="width: {{getStakedAmount(farmAcc.gemsStaked, $route.path)}}%"></div>
-      </div>
-    </div>
-    -->
     <div v-if="farmAcc" class="flex flex-wrap justify-center align-center pb-5">
       <p class="text-lg text-imso-blue">Total Staked {{farmAcc.gemsStaked}} ({{getStakedAmount(farmAcc.gemsStaked, $route.path)}}%)</p>
     </div>
