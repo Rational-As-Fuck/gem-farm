@@ -19,7 +19,7 @@
       <div v-if="activeRewardType === 'fixed'">
         <div class="flex mb-5">
           <div class="nes-field mr-5 flex-1">
-            <label for="baseRate">Base rate (tokens/gem/s):</label>
+            <label for="baseRate">Base rate (tokens/NFT/day):</label>
             <input
               id="baseRate"
               type="text"

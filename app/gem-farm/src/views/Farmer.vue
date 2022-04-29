@@ -7,9 +7,11 @@
     <CollectionCards />
   </div>
   <div v-else>
+    <!--
     <div v-if="farmAcc" class="flex flex-wrap justify-center align-center pb-5">
       <p class="text-lg text-imso-blue">Total Staked {{farmAcc.gemsStaked}} ({{getStakedAmount(farmAcc.gemsStaked, $route.path)}}%)</p>
     </div>
+    -->
     <div v-if="farm">
       <div>
         <p class="colheading capitalize">{{ $route.params.col }}</p>
@@ -17,7 +19,7 @@
     </div>
     <div class="m-auto">
       <p class="text-xs md:text-sm">Please choose the farm you would like to manage</p>
-      <p class="text-xs md:text-sm">If your seelcted farm does not yet exist for your connected wallet, you can create a new one</p>
+      <p class="text-xs md:text-sm">If your selected farm does not yet exist for your connected wallet, you can create a new one</p>
       <div class="with-title mb-10 mt-3">
         <select id="colsel" class="mx-auto swv-button farm-button-trigger" v-model="farm" v-on:change="changeRoute($event)">
           <option selected disabled value="">Select Farm</option>
@@ -130,7 +132,6 @@ export default defineComponent({
     const { wallet, getWallet } = useWallet();
     const { cluster, getConnection } = useCluster();
     const toaster = createToaster({ "type":"success", "position":"top", "duration":"false" });
-
     let gf: any;
     watch([wallet, cluster], async () => {
       await freshStart();
@@ -145,9 +146,6 @@ export default defineComponent({
       while (end < start + ms) {
         end = new Date().getTime();
       }
-    }
-    const getStakedAmount = () => {
-      return 15;
     }
 
     // --------------------------------------- farmer details
@@ -190,6 +188,7 @@ export default defineComponent({
       farmerAcc.value = await gf.fetchFarmerAcc(farmerPDA);
       farmerState.value = gf.parseFarmerState(farmerAcc.value);
       await updateAvailableRewards();
+      debugger;
       console.log(
         `farmer found at ${farmerIdentity.value}:`,
         stringifyPKsAndBNs(farmerAcc.value)
@@ -330,8 +329,8 @@ export default defineComponent({
       } else {
         denom = 0;
       }
-      
-      stakePct = Math.round((numStaked/denom) * 100);
+      let pctStaked = numStaked/denom;
+      stakePct = Math.floor(pctStaked * 10000)/100;
       return stakePct;
     },
   },

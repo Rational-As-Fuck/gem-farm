@@ -9,7 +9,7 @@
     </div>
     <!-- <div class="mb-2 text-xs md:text-base break-words">Your identity: {{ farmerAcc.identity.toBase58() }}</div> -->
     <!-- <div class="mb-2 text-xs md:text-base break-words">Associated vault: {{ farmerAcc.vault.toBase58() }}</div> -->
-    <div class="mb-2">Gems staked: {{ farmerAcc.gemsStaked }}</div>
+    <div class="mb-2">NFTs staked: {{ farmerAcc.gemsStaked }}</div>
     <!--
     <div class="mb-2">
       Min staking ends: {{ parseDate(farmerAcc.minStakingEndsTs) }}

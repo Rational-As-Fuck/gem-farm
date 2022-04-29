@@ -9,7 +9,7 @@
       class="stake-button-trigger stake-btn is-primary mr-5"
       @click="moveNFTsOnChain"
     >
-      Move Gems!
+      Move NFTs!
     </button>
     <slot />
   </div>
