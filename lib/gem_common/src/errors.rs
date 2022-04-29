@@ -28,6 +28,8 @@ pub enum ErrorCode {
     AmountMismatch,
 
     Reserved5,
+    #[msg("account discriminator doesn't match")]
+    AccountDiscriminatorMismatch,
     Reserved6,
     Reserved7,
     Reserved8,

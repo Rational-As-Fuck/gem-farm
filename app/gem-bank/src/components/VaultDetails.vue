@@ -9,7 +9,7 @@
       <p class="inline-block bg-yellow-200">{{ vaultAcc.locked }}</p>
     </div>
     <div class="mb-2">Mints stored: {{ vaultAcc.gemBoxCount }}</div>
-    <div class="mb-2">Gems stored: {{ vaultAcc.gemCount }}</div>
+    <div class="mb-2">NFTs stored: {{ vaultAcc.gemCount }}</div>
   </div>
 </template>
 

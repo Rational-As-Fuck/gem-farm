@@ -23,7 +23,7 @@
           class="nes-btn is-primary mx-5"
           @click="moveNFTsOnChain"
         >
-          Move Gems!
+          Move NFTs!
         </button>
       </div>
 

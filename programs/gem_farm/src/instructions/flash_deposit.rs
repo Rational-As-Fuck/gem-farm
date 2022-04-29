@@ -145,6 +145,6 @@ pub fn handler<'a, 'b, 'c, 'info>(
         farmer,
     )?;
 
-    // msg!("{} extra gems staked for {}", amount, farmer.key());
+    // msg!("{} extra NFTs staked for {}", amount, farmer.key());
     Ok(())
 }
